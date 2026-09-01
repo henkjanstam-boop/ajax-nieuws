@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    
+<script type="text/javascript" data-description="sourcepoint stub code">
+    !function () { var e = function () { var e, t = "__tcfapiLocator", a = [], n = window; for (; n;) { try { if (n.frames[t]) { e = n; break } } catch (e) { } if (n === window.top) break; n = n.parent } e || (!function e() { var a = n.document, r = !!n.frames[t]; if (!r) if (a.body) { var i = a.createElement("iframe"); i.style.cssText = "display:none", i.name = t, a.body.appendChild(i) } else setTimeout(e, 5); return !r }(), n.__tcfapi = function () { for (var e, t = arguments.length, n = new Array(t), r = 0; r < t; r++)n[r] = arguments[r]; if (!n.length) return a; if ("setGdprApplies" === n[0]) n.length > 3 && 2 === parseInt(n[1], 10) && "boolean" == typeof n[3] && (e = n[3], "function" == typeof n[2] && n[2]("set", !0)); else if ("ping" === n[0]) { var i = { gdprApplies: e, cmpLoaded: !1, cmpStatus: "stub" }; "function" == typeof n[2] && n[2](i) } else a.push(n) }, n.addEventListener("message", (function (e) { var t = "string" == typeof e.data, a = {}; try { a = t ? JSON.parse(e.data) : e.data } catch (e) { } var n = a.__tcfapiCall; n && window.__tcfapi(n.command, n.version, (function (a, r) { var i = { __tcfapiReturn: { returnValue: a, success: r, callId: n.callId } }; t && (i = JSON.stringify(i)), e.source.postMessage(i, "*") }), n.parameter) }), !1)) }; "undefined" != typeof module ? module.exports = e : e() }();
+</script>
+<script data-description="sourcepoint configuration">
+window._sp_ = {
+    config: {"accountId":1254,"propertyId":7432,"gdpr":{"consentLanguage":"nl","targetingParams":{"acps":"false"}},"baseEndpoint":"https://cdn.privacy-mgmt.com","isSPA":true,"cpPropertyId":"0eea5342"}}
+</script>
+<script src="https://cdn.privacy-mgmt.com/wrapperMessagingWithoutDetection.js" async></script>
+<script type="text/javascript" data-description="contentpass integration">
+    (function() {
+        var cpBaseUrl = 'https://cp.transfermarkt.nl';
+        var cpController = cpBaseUrl + '/now.js';
+        var cpPropertyId = '0eea5342';
+
+        !function(C,o,n,t,P,a,s){C['CPObject']=n;C[n]||(C[n]=function(){
+        (C[n].q=C[n].q||[]).push(arguments)});C[n].l=+new Date;a=o.createElement(t);
+        s=o.getElementsByTagName(t)[0];a.src=P;s.parentNode.insertBefore(a,s)}
+        (window,document,'cp','script',cpController);
+
+        !function(C,o,n,t,P){if(!C[n].patched){cp('extension','authenticate');P=C[n].q.push;
+        C[n].q.push=function(a){if(a[0]==='authenticate'){if((o['cookie']||'').indexOf('_cpauthhint=')===-1&&
+        !(C['localStorage']||{})['_cpuser']&&C.location.href.toLowerCase().indexOf('cpauthenticated')===-1){
+        t={isLoggedIn:function(){return false;},hasValidSubscription:function(){return false;}};
+        (typeof a[1]==='function'&&a[1](null,t));C[n].afp=true;P.apply(C[n].q,[['authenticate',null]]);
+        return t;}}P.apply(C[n].q,[a]);}}}
+        (window,document,'cp',false);
+
+        cp('create', cpPropertyId, {
+        baseUrl: cpBaseUrl
+        });
+
+        cp('render', {
+        onFullConsent: function() {
+            console.log('[DEMO] onFullConsent');
+        }
+        })
+    })()
+</script>
+
+<script type="text/javascript" data-description="contentpass sourcepoint fast path">
+(function () {
+    cp('authenticate', function(err, user) {
+        if (err || (!user.isLoggedIn() && !user.hasValidSubscription())) {
+        // console.log('[SPCP] Taking fast path');
+        (function spExecMsg() {
+            if (window._sp_ && window._sp_.executeMessaging) {
+            if (!window._sp_.config.isSPA) {
+                // console.warn('[SPCP] Sourcepoint not in SPA mode!');
+            } else if (window._sp_.version) {
+                // console.log('[SPCP] Sourcepoint already running');
+            } else {
+                // console.log('[SPCP] Starting Sourcepoint');
+                window._sp_.executeMessaging();
+            }
+            } else {
+            // console.log('[SPCP] Sourcepoint not loaded yet. Retrying.');
+            setTimeout(spExecMsg, 10);
+            }
+        })();
+        }
+    });
+    })();
+</script>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="shortcut icon" sizes="192x192" href="/android-chrome-192x192.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+<meta name="keywords" content="AFC Ajax,Nederland" />
+<meta name="description" content="Deze statistiek toont alle transfergeruchten (over mogelijk vertrekkende spelers) ten opzichte van de club Ajax." />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://tmssl.akamaized.net/images/tm_logo.png" />
+<meta property="og:description" content="" />
+<meta property="og:title" content="AFC Ajax - Geruchten over vertrekkende spelers" />
+<meta property="twitter:title" content="AFC Ajax - Geruchten over vertrekkende spelers" />
+<meta property="og:url" content="https://www.transfermarkt.nl/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="de" rel="alternate" href="https://www.transfermarkt.de/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="de-LU" rel="alternate" href="https://www.transfermarkt.de/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="de-AT" rel="alternate" href="https://www.transfermarkt.at/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="de-CH" rel="alternate" href="https://www.transfermarkt.ch/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="tr" rel="alternate" href="https://www.transfermarkt.com.tr/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="it-CH" rel="alternate" href="https://www.transfermarkt.it/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="it" rel="alternate" href="https://www.transfermarkt.it/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="pl" rel="alternate" href="https://www.transfermarkt.pl/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="en-GB" rel="alternate" href="https://www.transfermarkt.co.uk/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="en-IE" rel="alternate" href="https://www.transfermarkt.co.uk/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="es" rel="alternate" href="https://www.transfermarkt.es/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="es-ES" rel="alternate" href="https://www.transfermarkt.es/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="es-CL" rel="alternate" href="https://www.transfermarkt.es/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="es-VE" rel="alternate" href="https://www.transfermarkt.es/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="es-EC" rel="alternate" href="https://www.transfermarkt.es/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="es-CU" rel="alternate" href="https://www.transfermarkt.es/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="nl" rel="alternate" href="https://www.transfermarkt.nl/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="pt" rel="alternate" href="https://www.transfermarkt.pt/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="ru" rel="alternate" href="https://www.transfermarkt.world/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="fr-CH" rel="alternate" href="https://www.transfermarkt.fr/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="fr" rel="alternate" href="https://www.transfermarkt.fr/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="fr-CA" rel="alternate" href="https://www.transfermarkt.fr/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="fr-CI" rel="alternate" href="https://www.transfermarkt.fr/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="fr-LU" rel="alternate" href="https://www.transfermarkt.fr/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="fr-BE" rel="alternate" href="https://www.transfermarkt.fr/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="pt-BR" rel="alternate" href="https://www.transfermarkt.com.br/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="en-US" rel="alternate" href="https://www.transfermarkt.us/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="en-CA" rel="alternate" href="https://www.transfermarkt.us/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="en-IN" rel="alternate" href="https://www.transfermarkt.co.in/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="en-ZA" rel="alternate" href="https://www.transfermarkt.co.za/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="x-default" rel="alternate" href="https://www.transfermarkt.com/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="en" rel="alternate" href="https://www.transfermarkt.com/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="nl-BE" rel="alternate" href="https://www.transfermarkt.be/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="ro" rel="alternate" href="https://www.transfermarkt.ro/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="el-GR" rel="alternate" href="https://www.transfermarkt.gr/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="ko-KR" rel="alternate" href="https://www.transfermarkt.co.kr/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="es-AR" rel="alternate" href="https://www.transfermarkt.com.ar/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="es-MX" rel="alternate" href="https://www.transfermarkt.mx/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="es-CO" rel="alternate" href="https://www.transfermarkt.co/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="es-PE" rel="alternate" href="https://www.transfermarkt.pe/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="ja" rel="alternate" href="https://www.transfermarkt.jp/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link hreflang="id" rel="alternate" href="https://www.transfermarkt.co.id/ajax-amsterdam/geruechteabgaenge/verein/610" />
+<link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/styles/tm-main.min.css?lm=1788175929" />
+<link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/css/stylesheets/main_desktop.css?lm=1788175395" />
+<link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/styles/tm-discover.min.css?lm=1788175929" />
+<link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/styles/tm-button-list.min.css?lm=1788175929" />
+<link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/styles/tm-link-list.min.css?lm=1788175929" />
+<link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/styles/tm-print.min.css?lm=1788175929" />
+<link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/css/stylesheets/vereinsseite.css?lm=1788175395" />
+<link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/styles/tm-statistics.min.css?lm=1788175929" />
+<link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/styles/tm-game-report.min.css?lm=1788175929" />
+<link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/styles/tm-chosen.min.css?lm=1788175929" />
+<link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/css/stylesheets/main.css?lm=1788175395" />
+<link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/styles/tm-club-profile.min.css?lm=1788175929" />
+<link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/css/stylesheets/paginator.css?lm=1788175395" />
+<script type="text/javascript" src="https://tmssl.akamaized.net/js/vendor/jquery.min.js?lm=1788175395"></script>
+<script type="text/javascript" src="https://tmssl.akamaized.net/assets/b7c5571cf8957553f95f6d9069eaed67/jquery.ba-bbq.min.js?lm=1788175395"></script>
+<script type="text/javascript" src="https://tmssl.akamaized.net/assets/b344ec51bd68be8ed48379c9e69eb01d/js/jquery.scrollTo.min.js?lm=1788175395"></script>
+<script type="text/javascript" src="https://tmssl.akamaized.net/assets/b344ec51bd68be8ed48379c9e69eb01d/js/elinkpagermobile.js?lm=1788175395"></script>
+<script type="text/javascript" src="https://tmssl.akamaized.net/js/main.js?lm=1788175395"></script>
+<script type="text/javascript" src="https://tmssl.akamaized.net/js/chosen.ajaxaddition.jquery.js?lm=1788175395"></script>
+<script type="text/javascript" src="https://tmssl.akamaized.net/js/functions.js?lm=1788175395"></script>
+<script type="text/javascript" src="https://tmssl.akamaized.net/js/main_desktop.js?lm=1788175395"></script>
+<script type="text/javascript" src="https://tmssl.akamaized.net/js/chosen.jquery.js?lm=1788175395"></script>
+<script type="text/javascript" src="https://tmsi.akamaized.net/js/svelte-components/consent/bundle.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+console.info("%c [TM-ADs] Initialize Ads on domain .nl (verein/geruechteabgaenge)", "background: #282828; color: #bada55")
+console.info("%c [TM-ADs] Render slot rectangle1 (ASTAGQ_Rectangle_slice1/ASTAGQ_Rectangle) for webads", "background: #282828; color: #bada55")
+console.info("%c [TM-ADs] Render slot rectangle2 (ASTAGQ_Rectangle_slice1/ASTAGQ_Rectangle) for webads", "background: #282828; color: #bada55")
+console.info("%c [TM-ADs] Render slot skyscraper (ASTAGQ_Right/ASTAGQ_Right) for webads", "background: #282828; color: #bada55")
+console.info("%c [TM-ADs] Render slot skyscraperbtf (ASTAGQ_Right_slice1/ASTAGQ_Right_slice1) for webads", "background: #282828; color: #bada55")
+console.info("%c [TM-ADs] Render slot billboard (ASTAGQ_Billboard_APTO/ASTAGQ_Billboard_APTO) for webads", "background: #282828; color: #bada55")
+    var oddsServe = function(placement,competition,match,node) {
+        if (!node){
+            var s=document.readyState==='loading'?document.getElementsByTagName('script'):[];
+            node=s.length?s[s.length-1].parentNode:null;
+        }
+        oddsServe.queue.push({contentUnitId:placement,competition:competition,match:match,node:node});
+    }
+    
+    oddsServe.onInit=function(callbacks){
+        if (typeof window.__tcfapi === 'function') {
+            __tcfapi('addEventListener', 2, function(tcdata, success) {
+                let tcf20compatibleString;
+                if(success) {
+                    if (tcdata.eventStatus === 'useractioncomplete') {
+                        tcf20compatibleString = tcdata.tcString;
+                    } else if (tcdata.eventStatus === 'tcloaded') {
+                        tcf20compatibleString = tcdata.tcString;
+                    }
+                    callbacks.setGdprOptions({
+                        gdpr:1,
+                        gdpr_pd:1,
+                        gdpr_consent:tcf20compatibleString,
+                    });
+                }
+            });
+        } else {
+            console.warn('E2: __tcfapi not found');
+        }
+    };
+    oddsServe.options={gdpr_wait:true};
+    oddsServe.queue=[];
+console.info("%c [TM-ADs] Add adslot configuration for 5 ad slots rectangle1 | rectangle2 | skyscraper | skyscraperbtf | billboard", "background: #282828; color: #bada55")
+console.info("%c [TM-ADs] Adslots without configuration: fireplace | skyscraper-left-bound | fullsize_contentad | richmedia | 1by1px", "background: #282828; color: #bada55")
+console.info("%c [TM-ADs] Register slots with JS vendor lib", "background: #282828; color: #bada55")
+console.warn("%c [TM-ADs] Duplicate container IDs found: ASTAGQ_Rectangle", "background: #282828; color: #bada55")
+window.addEventListener('load', () => {
+  const offset = window.matchMedia('(max-width: 768px)').matches ? 80 : 120;
+  document.querySelectorAll('[data-sticky]').forEach(node => {
+    const parent = node.parentElement;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) {
+        parent.style.position = 'sticky';
+        parent.style.top = `${offset}px`;
+        parent.style.zIndex = 12000000;
+        setTimeout(() => {
+          parent.style.removeProperty('position');
+          parent.style.removeProperty('top');
+          parent.style.removeProperty('z-index');
+        }, parseInt(node.dataset?.sticky) || 3000);
+        observer.unobserve(parent);
+      }
+    }, { rootMargin: `-${offset}px 0px 0px 0px`, threshold: 1 });
+    observer.observe(parent);
+  });
+});
+
+console.info("%c [TM-ADs] Render ad slots js for webads", "background: #282828; color: #bada55")
+console.info("%c [TM-ADs] Added external ad script https://nojazz.eu/nl/client/transfermarkt.nl/initiator.js for webads on wettbewerbe_team_rest", "background: #282828; color: #bada55")
+/*]]>*/
+</script>
+<title>AFC Ajax - Geruchten over vertrekkende spelers | Transfermarkt</title>
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-152x152.png">
+    
+<script type="text/javascript">
+   tmData = {
+       loggedIn : "0",
+       tmTraffic: "0",
+   };
+</script>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    let utmVars = {
+        eVar1: urlParams.get('utm_campaign'),
+        eVar6: urlParams.get('utm_source'),
+        eVar24: urlParams.get('utm_medium')
+    };
+    Object.keys(utmVars).forEach((k) => utmVars[k] == null && delete utmVars[k]);
+
+    window.tmAnalyticsDataLayer = window.tmAnalyticsDataLayer || [];
+    window.tmAnalytics = {
+        dimensions: {
+            eVar7: 'Ajax Amsterdam (610)',
+			eVar8: 'Eredivisie (NL1)',
+			eVar9: 'Netherlands',
+			eVar10: 'https://www.transfermarkt.nl/ajax-amsterdam/geruechteabgaenge/verein/610',
+			...utmVars,
+            evar19: window.location.href,
+            eVar35 : '',
+			eVar37 : '',
+                },
+    properties: {
+        prop2: 'statistik',
+		prop3: 'verein',
+		prop4: 'geruechteabgaenge',
+		prop5: '610',
+		prop14: 'statistik_verein_geruechteabgaenge_610',
+		prop9: window.location.hostname,
+        prop10: window.location.href,
+        prop1 : 'false',
+    },
+    pageDetails: {
+        pageViews: {
+            value: 1
+        },
+        isErrorPage: 'false',
+            isHomepage: 'false',
+            name: 'AFC Ajax - Geruchten over vertrekkende spelers | Transfermarkt',
+            URL: window.location.href,
+            server: 'prod-tm-server-web-1112'
+    },
+    };
+
+function tmEventForLink(category, aTag, label) {
+    const url = new URL(aTag.href);
+    const link = url.pathname + url.search;
+    tmEvent(category, link, label);
+}
+
+function tmEvent(category, action, label, detail = '') {
+    if (typeof gtag === 'function') {
+        gtag('event',
+            action,
+            {
+                'event_category': category,
+                'event_label': label
+            }
+        );
+    }
+
+    const ev = {
+        event: 'tmEvent',
+        tmEvent: {
+            customDimensions: {
+                eVars: {
+                    ...tmAnalytics.dimensions
+                },
+                props: {
+                    prop6: category,
+                    prop7: action,
+                    prop8: label,
+                    prop17: detail,
+                    ...tmAnalytics.properties
+                }
+            },
+            event1to100: {
+                event7: {
+                    value: 1
+                },
+                event8: null,
+            },
+            session: {
+                web: {
+                    webInteraction: {
+                        linkClicks: {
+                            value: 1
+                        }
+                    },
+                    webPageDetails: {
+                        ...tmAnalytics.pageDetails,
+                        ...{
+                            pageViews: {
+                                value: null
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    };
+
+     if (!window._satellite) {
+        once = false;
+        window._satellite = { _monitors: [{
+            ruleTriggered: (e) => {
+                if (once) {
+                    return;
+                }
+                once = true;
+                setTimeout(() => {
+                    tmAnalyticsDataLayer.push(ev);
+                    tmAnalyticsDataLayer.push(function (dl) {
+                        const state = dl.getState();
+                    });
+                }, 1);
+            }
+        }] };
+    } else {
+        tmAnalyticsDataLayer.push(ev);
+        tmAnalyticsDataLayer.push(function (dl) {
+            const state = dl.getState();
+        });
+    }
+}
+function tmTrackingAndAds() {
+    if (typeof gtag === 'function') {
+        gtag("event", "page_view", {
+            page_path: "/jsContent" + window.location.pathname
+        });
+    }
+
+    tmAnalyticsDataLayer.push({
+        event: 'tmTrackingAndAds',
+        tmTrackingAndAds: {
+            customDimensions: {
+                eVars: tmAnalytics.dimensions,
+                props: tmAnalytics.properties
+            },
+            event1to100: {
+                event7: null,
+                event8: {
+                    value: 1
+                }
+            },
+            session: {
+                web: {
+                    webInteraction: {
+                        linkClicks: {
+                            value: null
+                        }
+                    },
+                    webPageDetails: {
+                        ...tmAnalytics.pageDetails,
+                        ...{
+                            pageViews: {
+                                value: 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    });
+    tmAnalyticsDataLayer.push(function (dl) {
+        const state = dl.getState();
+    });
+}
+function tmTiming(value, name, event_category, event_label) {
+    console.log('tmTiming', value, name, event_category, event_label);
+}
+
+        !function(e,a,n,t){var i=e.head;if(i){
+            if (a) return;
+            var o=e.createElement("style");
+            o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}}
+        (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+
+            !function(n,o){o.forEach(function(o){n[o]||((n.__alloyNS=n.__alloyNS||
+                []).push(o),n[o]=function(){var u=arguments;return new Promise(
+                function(i,l){n[o].q.push([i,l,u])})},n[o].q=[])})}
+            (window,["alloy"]);
+</script>
+<tm-consent
+    type="adobe"
+    no-checkbox
+    embed="PHNjcmlwdCBhc3luYyBzcmM9Imh0dHBzOi8vYXNzZXRzLmFkb2JlZHRtLmNvbS83Y2FkY2E5NWRkOWEvY2Q0YWI4ODRkMjMxL2xhdW5jaC0wMTI3MmI0MDBjNjUubWluLmpzIj48L3NjcmlwdD4=">
+</tm-consent>
+
+    <script type="text/javascript" src="https://tmssl.akamaized.net//ads/ads.js"></script>
+    <script type="text/javascript">
+        window.tmGaId = "UA-3816204-13";
+
+        function sendIvwData() {}
+    </script>
+            <link rel="canonical" href="https://www.transfermarkt.nl/ajax-amsterdam/geruechteabgaenge/verein/610">
+    </head>
+
+<body class="desktop " itemscope itemtype="http://schema.org/WebPage" data-tm-tld="nl" data-cmp-layer-id="910267" data-db-name="nl-der-zauberzwerg" >
+    
+        <div id="main">
+                    <button id="back-to-top" title="Nach oben">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17.795" height="10.009" viewBox="0 0 17.795 10.009">
+                    <path id="angle-up" d="M20.683,17.01a1.112,1.112,0,0,1-.786-.326l-7-7-7,7a1.112,1.112,0,1,1-1.573-1.573l7.785-7.785a1.112,1.112,0,0,1,1.573,0l7.785,7.785a1.112,1.112,0,0,1-.786,1.9Z" transform="translate(-4 -7)" fill="#fff"/>
+                </svg>
+            </button>
+            <div class="werbung-skyscraper-left-bound-container">
+                            </div>
+            <div class="werbung-skyscraper-container">
+                <div class="werbung ad-placement-note werbung-skyscraper" data-ad-placement-note="Reclame">
+  <div id="ASTAGQ_Right"></div>
+</div>
+            </div>
+
+            <div class="werbung-skyscraperbtf-container">
+                <div class="werbung ad-placement-note werbung-skyscraperbtf" data-ad-placement-note="Reclame">
+  <div id="ASTAGQ_Right_slice1"></div>
+</div>
+            </div>
+        
+        <div id="tm-overlay"></div>
+
+                    <div class="tm-header__box">
+                <!-- logo  -->
+                <a href="/" class="tm-header__logo" onclick="tmEvent('hauptnavi', '/', 'TM-Logo');">
+                    <img src="https://tmsi.akamaized.net/head/tm_logo_rebrush.svg"
+                         height="62"
+                         width="156"
+                         title="Transfermarkt"
+                         alt="Transfermarkt"
+                    >
+                </a>
+
+                <!-- domainswitcher  -->
+                <div class="domin-swicher">
+                    <tm-domain-switcher
+                        tld="nl"
+                        translations='{&quot;chooseYourDomain&quot;:&quot;Kies jouw domein&quot;}'></tm-domain-switcher>
+                </div>
+
+                <!-- live -->
+                <tm-live-match-count
+                    class="tm-header__live"
+                    auto-request                    content='{&quot;liveMatches&quot;:&quot;Live wedstrijden&quot;,&quot;liveMatch&quot;:&quot;Live wedstrijd&quot;,&quot;live&quot;:&quot;Live&quot;}'></tm-live-match-count>
+
+                <!-- Search -->
+                                    <div class="tm-header__search " id="schnellsuche-platz">
+                        <form name="schnellsuche" id="schnellsuche" class="tm-header__form" action="/schnellsuche/ergebnis/schnellsuche">
+                            <input type="text" name="query" class="tm-header__input--search-field" onClick="" placeholder="Zoeken (b.v. speler, club,...)" autocorrect="off" spellcheck="false" value="" />
+                            <button type="submit" value="" class="tm-header__input--search-send" alt="Zoeken">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+                                    <path d="M17.825,16.847 L14.28,13.303 C17.072,9.987 16.756,5.061 13.563,2.13 C10.37,-0.8 5.435,-0.695 2.37,2.37 C-0.695,5.435 -0.8,10.37 2.13,13.563 C5.061,16.756 9.987,17.072 13.303,14.28 L16.847,17.825 C17.121,18.069 17.538,18.057 17.797,17.797 C18.057,17.538 18.069,17.121 17.825,16.847 z M1.418,8.108 C1.417,4.413 4.412,1.417 8.107,1.416 C11.802,1.415 14.798,4.411 14.799,8.106 C14.799,11.801 11.804,14.797 8.108,14.797 C4.414,14.797 1.419,11.803 1.418,8.108 z" fill="#000" />
+                                </svg>
+                            </button>
+                        </form>
+                        <a href="/detailsuche/spielerdetail/suche" title="Geavanceerd zoeken" id="detailsuche-head" class="tm-header__search-detail">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0, 0, 18, 18">
+                                <path d="M3.138,3.558 C3.137,1.593 4.727,0 6.69,0 C8.652,-0 10.243,1.592 10.243,3.556 C10.243,5.521 8.653,7.113 6.69,7.113 C4.729,7.113 3.138,5.522 3.138,3.558 z M8.233,13.187 C8.261,11.778 8.861,10.442 9.893,9.486 C9.967,9.418 9.997,9.315 9.971,9.219 C9.946,9.119 9.863,9.044 9.76,9.03 C9.331,8.938 8.893,8.893 8.454,8.895 L4.906,8.895 C3.583,8.808 2.286,9.298 1.35,10.239 C0.414,11.179 -0.07,12.479 0.021,13.804 C-0.085,14.656 0.209,15.509 0.817,16.114 C1.425,16.72 2.279,17.009 3.13,16.897 L9.266,16.897 C9.372,16.895 9.467,16.831 9.508,16.732 C9.549,16.634 9.527,16.521 9.453,16.444 C8.665,15.544 8.232,14.387 8.236,13.191 z M17.805,17.804 C17.68,17.93 17.511,18 17.334,18 C17.158,18 16.989,17.93 16.864,17.804 L15.237,16.177 C13.686,17.242 11.58,16.949 10.378,15.501 C9.176,14.052 9.274,11.926 10.604,10.594 C11.934,9.263 14.058,9.165 15.505,10.368 C16.952,11.571 17.244,13.68 16.181,15.233 L17.805,16.866 C18.065,17.126 18.065,17.548 17.805,17.808 z M15.484,13.182 C15.484,11.911 14.455,10.881 13.186,10.881 C11.917,10.881 10.888,11.911 10.888,13.182 C10.888,14.452 11.917,15.482 13.186,15.482 C14.455,15.482 15.484,14.452 15.484,13.182 z" fill="#000" />
+                            </svg>
+                        </a>
+                                            </div>
+                
+                <!-- login button -->
+                <div class="tm-header__login">
+                    <tm-userbox translations='{&quot;addFavorite&quot;:&quot;Aan favoriete pagina&#039;s toevoegen&quot;,&quot;adminArea&quot;:&quot;Admingebied&quot;,&quot;adminTools&quot;:&quot;Admintools&quot;,&quot;allFavoriteLinkText&quot;:&quot;Ga naar mijn favoriete links&quot;,&quot;applyAsModOrDatascout&quot;:&quot;Solliciteer als moderator of datascout&quot;,&quot;checkAllNews&quot;:&quot;Check alle nieuwsartikelen&quot;,&quot;checkAllRumours&quot;:&quot;Check alle geruchten&quot;,&quot;chooseYourDomain&quot;:&quot;Kies jouw domein&quot;,&quot;clickAgain&quot;:&quot;Klik nog eens om de shortlink te kopi\u00ebren naar je clipboard&quot;,&quot;clubBoard&quot;:&quot;Clubforum&quot;,&quot;confirm&quot;:&quot;Ok\u00e9&quot;,&quot;copied&quot;:&quot;Gekopieerd naar je clipboard&quot;,&quot;copyLink&quot;:&quot;Link kopi\u00ebren&quot;,&quot;createAccount&quot;:&quot;Maak je account aan\n&quot;,&quot;createNewMessage&quot;:&quot;Nieuw bericht opstellen&quot;,&quot;createShortlink&quot;:&quot;Shortlink opstellen&quot;,&quot;createShortNews&quot;:&quot;User-nieuws opstellen&quot;,&quot;dashboard&quot;:&quot;Overzicht&quot;,&quot;dataAdministration&quot;:&quot;Dataonderhoud&quot;,&quot;debug&quot;:&quot;Debug&quot;,&quot;deleteAll&quot;:&quot;Alles verwijderen&quot;,&quot;deleteConfirm&quot;:&quot;Ja, alles verwijderen&quot;,&quot;editText&quot;:&quot;Bewerk&quot;,&quot;forgotPassword&quot;:&quot;Wachtwoord vergeten?&quot;,&quot;forgotUsername&quot;:&quot;Gebruikersnaam vergeten?&quot;,&quot;forgotLoginDetails&quot;:&quot;Jouw login-details vergeten?&quot;,&quot;forum&quot;:&quot;forum&quot;,&quot;groundhoppingTool&quot;:&quot;Groundhopping Tool&quot;,&quot;lastMatch&quot;:&quot;Vorige wedstrijd&quot;,&quot;signin&quot;:&quot;Inloggen&quot;,&quot;login&quot;:&quot;Login&quot;,&quot;logOut&quot;:&quot;Afmelden&quot;,&quot;manageFavorites&quot;:&quot;Favoriete pagina&#039;s beheren&quot;,&quot;marketValue&quot;:&quot;marktwaarde&quot;,&quot;matchplan&quot;:&quot;Programma&quot;,&quot;messages&quot;:&quot;Berichten&quot;,&quot;myClub&quot;:&quot;Mijn Club&quot;,&quot;myClubText&quot;:&quot;Met een Transfermarkt-account kun je je favoriete club instellen en zodoende alle belangrijke informatie, zoals wedstrijden, nieuws en snelkoppelingen vinden.&quot;,&quot;myDreamTeam&quot;:&quot;Mijn droomelftal&quot;,&quot;myFavorites&quot;:&quot;Mijn favoriete pagina&#039;s&quot;,&quot;myFavoritesText&quot;:&quot;Met een Transfermarkt-account kun je elke willekeurige pagina als favoriet opslaan en vervolgens met \u00e9\u00e9n klik bereiken.&quot;,&quot;myProfile&quot;:&quot;Mijn profiel&quot;,&quot;news&quot;:&quot;Nieuws&quot;,&quot;newsAdministration&quot;:&quot;Nieuws administratie&quot;,&quot;nextMatch&quot;:&quot;Volgende wedstrijd&quot;,&quot;noNewNotifications&quot;:&quot;Geen nieuwe notificaties&quot;,&quot;notifications&quot;:&quot;Notificaties&quot;,&quot;notificationsDeletedAutomatically&quot;:&quot;Let op: Notificaties worden automatisch verwijderd na 30 dagen.&quot;,&quot;notifyDeleteMessage&quot;:&quot;Priv\u00e9-berichten die ouder dan 45 dagen zijn, zullen van tijd tot tijd verwijderd worden (behalve voor datascouts en moderators).&quot;,&quot;or&quot;:&quot;of&quot;,&quot;other&quot;:&quot;Overige&quot;,&quot;overview&quot;:&quot;overzicht&quot;,&quot;password&quot;:&quot;Wachtwoord&quot;,&quot;playerRatings&quot;:&quot;Spelerbeoordelingen&quot;,&quot;playerWatchlist&quot;:&quot;Mijn watchlist&quot;,&quot;postponed&quot;:&quot;verplaatst&quot;,&quot;profile&quot;:&quot;Profiel&quot;,&quot;progDebug&quot;:&quot;Prog. Debug&quot;,&quot;progProfile&quot;:&quot;Prog. Profile&quot;,&quot;registerNow&quot;:&quot;Nu registreren&quot;,&quot;rememberMe&quot;:&quot;Login opslaan&quot;,&quot;removeFavorite&quot;:&quot;Favorieten verwijderen&quot;,&quot;rumors&quot;:&quot;Geruchten&quot;,&quot;schedule&quot;:&quot;Schema&quot;,&quot;sessionExpired&quot;:&quot;Je sessie bij Transfermarkt is verlopen. Log alsjeblieft opnieuw in.&quot;,&quot;sessionExpiredTitle&quot;:&quot;Sessie verlopen&quot;,&quot;setting&quot;:&quot;Instellingen&quot;,&quot;shortlink&quot;:&quot;Shortlink&quot;,&quot;shortLinkCreationError&quot;:&quot;Het aanmaken van de shortlink zorgde voor een foutmelding.&quot;,&quot;shortLinkHasBeenCreated&quot;:&quot;De shortlink is aangemaakt en gekopieerd naar je clipboard&quot;,&quot;shortLinkIsBeingCreated&quot;:&quot;Shortlink cre\u00ebren...&quot;,&quot;showAllMessages&quot;:&quot;Alle berichten tonen&quot;,&quot;totalMarketValue&quot;:&quot;Totale MW&quot;,&quot;translation&quot;:&quot;Vertaling&quot;,&quot;username&quot;:&quot;Gebruikersnaam&quot;,&quot;whyRegister&quot;:&quot;Waarom een account aanmaken?&quot;,&quot;Bitte korrigieren Sie die markierten Felder&quot;:&quot;Bitte korrigieren Sie die markierten Felder&quot;,&quot;mindestensDreiZeichen&quot;:&quot;Ten minste drie tekens&quot;,&quot;mindestensAchtZeichen&quot;:&quot;Minstens acht tekens&quot;,&quot;pleaseCorrectFields&quot;:&quot;profil&quot;,&quot;minThreeCharacters&quot;:&quot;Minstens 3 karakters&quot;,&quot;minEightCharacters&quot;:&quot;Minstens 8 karakters&quot;,&quot;noAtCharacter&quot;:&quot;\&quot;@\&quot; is niet toegestaan in de gebruikersnaam&quot;,&quot;agentProfile&quot;:&quot;Mijn makelaarsprofiel&quot;}' page-title="AFC Ajax - Geruchten over vertrekkende spelers | Transfermarkt" tld="nl" agent-profile=""  />
+                </div>
+            </div>
+        
+        
+                        <!-- mobile end -->
+            <nav class="main-navbar">
+                                    <a href="/" class="main-navbar__lp-link " onclick="tmEvent('hauptnavi', '/', 'Ontdek')">
+                        Ontdek                    </a>
+                                    <a href="/navigation/transfersundgeruechte" class="main-navbar__lp-link " onclick="tmEvent('hauptnavi', '/navigation/transfersundgeruechte', 'TRANSFERS & GERUCHTEN')">
+                        TRANSFERS & GERUCHTEN                    </a>
+                                    <a href="/navigation/marktwerte" class="main-navbar__lp-link " onclick="tmEvent('hauptnavi', '/navigation/marktwerte', 'MARKTWAARDEN')">
+                        MARKTWAARDEN                    </a>
+                                    <a href="/navigation/wettbewerbe" class="main-navbar__lp-link " onclick="tmEvent('hauptnavi', '/navigation/wettbewerbe', 'COMPETITIES')">
+                        COMPETITIES                    </a>
+                                    <a href="/navigation/statistiken" class="main-navbar__lp-link " onclick="tmEvent('hauptnavi', '/navigation/statistiken', 'STATISTIEKEN')">
+                        STATISTIEKEN                    </a>
+                                    <a href="/navigation/community" class="main-navbar__lp-link " onclick="tmEvent('hauptnavi', '/navigation/community', 'COMMUNITY')">
+                        COMMUNITY                    </a>
+                                    <a href="/navigation/gaming" class="main-navbar__lp-link " onclick="tmEvent('hauptnavi', '/navigation/gaming', 'GAMES')">
+                        GAMES                    </a>
+                                <div class="main-navbar__details">
+                    <div class="hamburger">
+                        <em></em>
+                    </div>
+                    <div class="dropdown-layer"></div>
+                    <div class="main-navbar__dropdown">
+                                                            <div class="recommendation">
+        
+    
+                            <div class="tm-discover__hero-container tm-discover__hero-container-grid tm-discover-container-grid">
+                    
+                                    <section class="tm-button-list__wrapper tm-button-list__wrapper--two-thirds  "><span class="tm-discover__h2">Aanbevelingen</span><ul class="tm-button-list"><li><a
+                        href="/wereldkampioenschap/startseite/wettbewerb/FIWC"
+                        title="Wereldkampioenschap"
+                        target=""
+                        class="tm-button-list__list-item tm-button-list__list-item--big "
+                        onclick="tmEvent('recommendations_recommendation', '/wereldkampioenschap/startseite/wettbewerb/FIWC' , '1_1', 'buttonList');"
+                    ><img
+                            src="https://img.a.transfermarkt.technology/logo/homepageWappen150x150/fiwc.png?lm=4711"
+                            alt="Wereldkampioenschap"
+                            class="tm-button-list__image tm-button-list__image--big 1"
+                            width="54"
+                            height="36"
+                        ></a></li><li><a
+                        href="/eredivisie/startseite/wettbewerb/NL1"
+                        title="Eredivisie"
+                        target=""
+                        class="tm-button-list__list-item tm-button-list__list-item--big "
+                        onclick="tmEvent('recommendations_recommendation', '/eredivisie/startseite/wettbewerb/NL1' , '1_2', 'buttonList');"
+                    ><img
+                            src="https://img.a.transfermarkt.technology/logo/homepageWappen150x150/nl1.png?lm=4711"
+                            alt="Eredivisie"
+                            class="tm-button-list__image tm-button-list__image--big 1"
+                            width="54"
+                            height="36"
+                        ></a></li><li><a
+                        href="/keuken-kampioen-divisie/startseite/wettbewerb/NL2"
+                        title="Keuken Kampioen Divisie"
+                        target=""
+                        class="tm-button-list__list-item tm-button-list__list-item--big "
+                        onclick="tmEvent('recommendations_recommendation', '/keuken-kampioen-divisie/startseite/wettbewerb/NL2' , '1_3', 'buttonList');"
+                    ><img
+                            src="https://img.a.transfermarkt.technology/logo/homepageWappen150x150/nl2.png?lm=4711"
+                            alt="Keuken Kampioen Divisie"
+                            class="tm-button-list__image tm-button-list__image--big 1"
+                            width="54"
+                            height="36"
+                        ></a></li><li><a
+                        href="/afc-ajax/startseite/verein/610"
+                        title="AFC Ajax"
+                        target="_self"
+                        class="tm-button-list__list-item tm-button-list__list-item--big "
+                        onclick="tmEvent('recommendations_recommendation', '/afc-ajax/startseite/verein/610' , '1_4', 'buttonList');"
+                    ><img
+                            src="https://img.a.transfermarkt.technology/wappen/homepageWappen150x150/610.png?lm=4711"
+                            alt="AFC Ajax"
+                            class="tm-button-list__image tm-button-list__image--big 1"
+                            width="54"
+                            height="36"
+                        ></a></li><li><a
+                        href="/feyenoord-rotterdam/startseite/verein/234"
+                        title="Feyenoord"
+                        target="_self"
+                        class="tm-button-list__list-item tm-button-list__list-item--big "
+                        onclick="tmEvent('recommendations_recommendation', '/feyenoord-rotterdam/startseite/verein/234' , '1_5', 'buttonList');"
+                    ><img
+                            src="https://img.a.transfermarkt.technology/wappen/homepageWappen150x150/234.png?lm=4711"
+                            alt="Feyenoord"
+                            class="tm-button-list__image tm-button-list__image--big 1"
+                            width="54"
+                            height="36"
+                        ></a></li><li><a
+                        href="/psvtm/startseite/verein/383"
+                        title="PSV"
+                        target="_self"
+                        class="tm-button-list__list-item tm-button-list__list-item--big "
+                        onclick="tmEvent('recommendations_recommendation', '/psvtm/startseite/verein/383' , '1_6', 'buttonList');"
+                    ><img
+                            src="https://img.a.transfermarkt.technology/wappen/homepageWappen150x150/383.png?lm=4711"
+                            alt="PSV"
+                            class="tm-button-list__image tm-button-list__image--big 1"
+                            width="54"
+                            height="36"
+                        ></a></li></ul></section>
+                                                                                
+        
+    
+                
+                                    <section class="tm-button-list__wrapper tm-button-list__wrapper--one-third  tm-button-list__desktop"><span class="tm-discover__h2">Spelermakelaars</span><ul class="tm-button-list"><li><a
+                        href="/agent-support/beraterIndex/berater"
+                        title="Hulp voor makelaars"
+                        target="_self"
+                        class="tm-button-list__list-item tm-button-list__list-item--big tm-button-list__agent"
+                        onclick="tmEvent('recommendations_recommendation', '/agent-support/beraterIndex/berater' , '2_1', 'buttonList');"
+                    ><img
+                            src="https://tmsi.akamaized.net/rebrush/navigation/agent-support.webp"
+                            alt=""
+                            class="tm-button-list__image tm-button-list__image--big tm-button-list__image--country tm-button-list__image--border"
+                            width="54"
+                            height="36"
+                        >Hulp<br>voor<br>makelaars</a></li><li><a
+                        href="/berater/beraterfirmenuebersicht/berater"
+                        title="Spelermakelaars"
+                        target="_self"
+                        class="tm-button-list__list-item tm-button-list__list-item--big tm-button-list__agent"
+                        onclick="tmEvent('recommendations_recommendation', '/berater/beraterfirmenuebersicht/berater' , '2_2', 'buttonList');"
+                    ><img
+                            src="https://tmsi.akamaized.net/rebrush/navigation/agent-statistic.webp"
+                            alt=""
+                            class="tm-button-list__image tm-button-list__image--big tm-button-list__image--country tm-button-list__image--border"
+                            width="54"
+                            height="36"
+                        >Spelermakelaars</a></li><li><a
+                        href="/premium-service/berater"
+                        title="Premium service"
+                        target="_self"
+                        class="tm-button-list__list-item tm-button-list__list-item--big tm-button-list__agent"
+                        onclick="tmEvent('recommendations_recommendation', '/premium-service/berater' , '2_3', 'buttonList');"
+                    ><img
+                            src="https://tmsi.akamaized.net/rebrush/navigation/premium-service.webp"
+                            alt=""
+                            class="tm-button-list__image tm-button-list__image--big tm-button-list__image--country tm-button-list__image--border"
+                            width="54"
+                            height="36"
+                        >Premium<br>service</a></li></ul></section>
+                                                                                
+        
+    
+                
+                                            
+<section class="tm-link-list-container tm-link-list--full ">
+        <div
+        class="tm-link-list-element"
+        role="navigation"
+        aria-label=""
+    >
+                    
+                        
+                                            <ul
+    class="tm-link-list-unordered   recommendation__links"
+>
+            <li
+            class="tm-link-list-item"
+        >
+                            <a
+                    class="tm-link__arrow  "
+                    href="/statistik/neuestetransfers"
+                    title="Laatste transfers"
+                    target="_self"
+                    onclick="tmEvent('recommendations_recommendation', '/statistik/neuestetransfers' , '3_1','linkList');"
+                >
+                    Laatste transfers
+                </a>
+                    </li>
+            <li
+            class="tm-link-list-item"
+        >
+                            <a
+                    class="tm-link__arrow  "
+                    href="/geruchtenmolen/detail/forum/154"
+                    title="Geruchtenmolen"
+                    target="_self"
+                    onclick="tmEvent('recommendations_recommendation', '/geruchtenmolen/detail/forum/154' , '3_2','linkList');"
+                >
+                    Geruchtenmolen
+                </a>
+                    </li>
+            <li
+            class="tm-link-list-item"
+        >
+                            <a
+                    class="tm-link__arrow  "
+                    href="/aktuell/newsarchiv"
+                    title="Alle nieuwsartikelen"
+                    target="_self"
+                    onclick="tmEvent('recommendations_recommendation', '/aktuell/newsarchiv' , '3_3','linkList');"
+                >
+                    Alle nieuwsartikelen
+                </a>
+                    </li>
+            <li
+            class="tm-link-list-item"
+        >
+                            <a
+                    class="tm-link__arrow  "
+                    href="/whatsMyValue"
+                    title="What's my value?"
+                    target="_self"
+                    onclick="tmEvent('recommendations_recommendation', '/whatsMyValue' , '3_4','linkList');"
+                >
+                    What's my value?
+                </a>
+                    </li>
+            <li
+            class="tm-link-list-item"
+        >
+                            <a
+                    class="tm-link__arrow  "
+                    href="/spieler-statistik/wertvollstespieler/marktwertetop"
+                    title="Meest waardevolle spelers ter wereld"
+                    target="_self"
+                    onclick="tmEvent('recommendations_recommendation', '/spieler-statistik/wertvollstespieler/marktwertetop' , '3_5','linkList');"
+                >
+                    Meest waardevolle spelers ter wereld
+                </a>
+                    </li>
+    </ul>
+                                            <ul
+    class="tm-link-list-unordered   recommendation__links"
+>
+            <li
+            class="tm-link-list-item"
+        >
+                            <a
+                    class="tm-link__arrow  "
+                    href="/eredivisie/marktwerte/wettbewerb/NL1"
+                    title="Meest waardevolle spelers Eredivisie"
+                    target="_self"
+                    onclick="tmEvent('recommendations_recommendation', '/eredivisie/marktwerte/wettbewerb/NL1' , '3_6','linkList');"
+                >
+                    Meest waardevolle spelers Eredivisie
+                </a>
+                    </li>
+            <li
+            class="tm-link-list-item"
+        >
+                            <a
+                    class="tm-link__arrow  "
+                    href="/marktwaarde-analyse/detail/forum/67"
+                    title="Forum Marktwaarden"
+                    target="_self"
+                    onclick="tmEvent('recommendations_recommendation', '/marktwaarde-analyse/detail/forum/67' , '3_7','linkList');"
+                >
+                    Forum Marktwaarden
+                </a>
+                    </li>
+            <li
+            class="tm-link-list-item"
+        >
+                            <a
+                    class="tm-link__arrow  "
+                    href="/statistik/vertragslosespieler"
+                    title="Transfervrije spelers"
+                    target="_self"
+                    onclick="tmEvent('recommendations_recommendation', '/statistik/vertragslosespieler' , '3_8','linkList');"
+                >
+                    Transfervrije spelers
+                </a>
+                    </li>
+            <li
+            class="tm-link-list-item"
+        >
+                            <a
+                    class="tm-link__arrow  "
+                    href="/statistik/endendevertraege"
+                    title="Aflopende contracten"
+                    target="_self"
+                    onclick="tmEvent('recommendations_recommendation', '/statistik/endendevertraege' , '3_9','linkList');"
+                >
+                    Aflopende contracten
+                </a>
+                    </li>
+            <li
+            class="tm-link-list-item"
+        >
+                            <a
+                    class="tm-link__arrow  "
+                    href="/wedden/"
+                    title="Wedden"
+                    target="_self"
+                    onclick="tmEvent('recommendations_recommendation', '/wedden/' , '3_10','linkList');"
+                >
+                    Wedden
+                </a>
+                    </li>
+    </ul>
+                        </div>
+
+    </section>
+                                                                        
+        
+    
+                
+                                    <section class="tm-button-list__wrapper tm-button-list__wrapper--full  tm-button-list__mobile"><span class="tm-discover__h2">Spelermakelaars</span><ul class="tm-button-list"><li><a
+                        href="/agent-support/beraterIndex/berater"
+                        title="Hulp voor makelaars"
+                        target="_self"
+                        class="tm-button-list__list-item tm-button-list__list-item--big tm-button-list__agent"
+                        onclick="tmEvent('recommendations_recommendation', '/agent-support/beraterIndex/berater' , '4_1', 'buttonList');"
+                    ><img
+                            src="https://tmsi.akamaized.net/rebrush/navigation/agent-support.webp"
+                            alt=""
+                            class="tm-button-list__image tm-button-list__image--big tm-button-list__image--country tm-button-list__image--border"
+                            width="54"
+                            height="36"
+                        >Hulp<br>voor<br>makelaars</a></li><li><a
+                        href="/berater/beraterfirmenuebersicht/berater"
+                        title="Spelermakelaars"
+                        target="_self"
+                        class="tm-button-list__list-item tm-button-list__list-item--big tm-button-list__agent"
+                        onclick="tmEvent('recommendations_recommendation', '/berater/beraterfirmenuebersicht/berater' , '4_2', 'buttonList');"
+                    ><img
+                            src="https://tmsi.akamaized.net/rebrush/navigation/agent-statistic.webp"
+                            alt=""
+                            class="tm-button-list__image tm-button-list__image--big tm-button-list__image--country tm-button-list__image--border"
+                            width="54"
+                            height="36"
+                        >Spelermakelaars</a></li><li><a
+                        href="/premium-service/berater"
+                        title="Premium service"
+                        target="_self"
+                        class="tm-button-list__list-item tm-button-list__list-item--big tm-button-list__agent"
+                        onclick="tmEvent('recommendations_recommendation', '/premium-service/berater' , '4_3', 'buttonList');"
+                    ><img
+                            src="https://tmsi.akamaized.net/rebrush/navigation/premium-service.webp"
+                            alt=""
+                            class="tm-button-list__image tm-button-list__image--big tm-button-list__image--country tm-button-list__image--border"
+                            width="54"
+                            height="36"
+                        >Premium<br>service</a></li></ul></section>
+                                                                                
+                    </div>
+        
+    </div>
+                                                </div>
+                </div>
+            </nav>
+
+            <div class="quick-select-wrapper">
+    
+    <tm-quick-select defaultCountry="122" defaultCompetition="NL1" defaultClub="610" defaultPlayer="" dropdown-visible="" translations='{"home":"Home","country":"Land","competition":"Competitie","club":"Club","player":"Speler","attack":"Aanval","midfield":"Middenveld","defense":"Verdediging","goalkeeper":"Keeper"}'>
+    </tm-quick-select>
+</div>
+
+            
+        
+        <div class="werbung ad-placement-note werbung-billboard" data-ad-placement-note="Reclame">
+  <div id="ASTAGQ_Billboard_APTO"></div>
+</div>
+
+
+        
+        <main id="tm-main">
+            <header class="data-header">
+    <div class="data-header__headline-container">
+        <h1 class="data-header__headline-wrapper data-header__headline-wrapper--oswald">
+                        AFC Ajax        </h1>
+    </div>
+    <div class="data-header__badge-container">
+                                    <a href="/afc-ajax/erfolge/verein/610" title="UEFA Champions League winner" onClick="tmEvent('vereinsprofil', 'click', 'erfolge');" class="data-header__success-data">
+                                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://img.a.transfermarkt.technology/erfolge/header/4.png?lm=4711" title="UEFA Champions League winner" alt="UEFA Champions League winner" class="data-header__success-image lazy lazy" />                        
+                    <span class="data-header__success-number">
+                        1                    </span>
+                </a>
+                                <a href="/afc-ajax/erfolge/verein/610" title="Europacup I winnaar" onClick="tmEvent('vereinsprofil', 'click', 'erfolge');" class="data-header__success-data">
+                                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://img.a.transfermarkt.technology/erfolge/header/55.png?lm=4711" title="Europacup I winnaar" alt="Europacup I winnaar" class="data-header__success-image lazy lazy" />                        
+                    <span class="data-header__success-number">
+                        3                    </span>
+                </a>
+                                <a href="/afc-ajax/erfolge/verein/610" title="UEFA Supercup winnaar" onClick="tmEvent('vereinsprofil', 'click', 'erfolge');" class="data-header__success-data">
+                                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://img.a.transfermarkt.technology/erfolge/header/354.png?lm=4711" title="UEFA Supercup winnaar" alt="UEFA Supercup winnaar" class="data-header__success-image lazy lazy" />                        
+                    <span class="data-header__success-number">
+                        3                    </span>
+                </a>
+                                <a href="/afc-ajax/erfolge/verein/610" title="UEFA Cup winnaar" onClick="tmEvent('vereinsprofil', 'click', 'erfolge');" class="data-header__success-data">
+                                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://img.a.transfermarkt.technology/erfolge/header/7.png?lm=4711" title="UEFA Cup winnaar" alt="UEFA Cup winnaar" class="data-header__success-image lazy lazy" />                        
+                    <span class="data-header__success-number">
+                        1                    </span>
+                </a>
+                                <a href="/afc-ajax/erfolge/verein/610" title="Europacup II winnaar" onClick="tmEvent('vereinsprofil', 'click', 'erfolge');" class="data-header__success-data">
+                                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://img.a.transfermarkt.technology/erfolge/header/53.png?lm=4711" title="Europacup II winnaar" alt="Europacup II winnaar" class="data-header__success-image lazy lazy" />                        
+                    <span class="data-header__success-number">
+                        1                    </span>
+                </a>
+                                                                <a href="/afc-ajax/erfolge/verein/610"
+                       title="Alle titels en successen"
+                       onClick="tmEvent('vereinsprofil', 'click', 'erfolge');"
+                       class="data-header__success-more"
+                    >
+                    </a>
+                                                    </div>
+            <div class="data-header__box--big">
+            <a class="data-header__box__club-link" href="/eredivisie/startseite/wettbewerb/NL1">
+                                    <img srcset="
+                                    https://img.a.transfermarkt.technology/logo/homepageNewsLogo80x80/nl1.png?lm=4711 1x,
+                                    https://img.a.transfermarkt.technology/logo/homepageWappen150x150/nl1.png?lm=4711 2x
+                                " alt="Eredivisie" height="80" width="80" />
+                                </a>
+            <div class="data-header__club-info">
+                <span class="data-header__club" itemprop="affiliation">
+                    <a href="/eredivisie/startseite/wettbewerb/NL1">
+                        Eredivisie                    </a>
+                </span>
+                                        <span class="data-header__label">
+                            <strong>Niveau:</strong>                            <span class="data-header__content">
+                                <a href="/eredivisie/startseite/wettbewerb/NL1">
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://img.a.transfermarkt.technology/flagge/tiny/122.png?lm=4711" title="Nederland" alt="Nederland" class="flaggenrahmen vm lazy lazy" />Hoogste divisie
+                                </a>
+                            </span>
+                        </span>
+                                            <span class="data-header__label">
+                            plaats op de ranglijst:
+                            <span class="data-header__content">
+                                <a href="/eredivisie/tabelle/wettbewerb/NL1" title="Stand">4</a>                                </a>
+                            </span>
+                        </span>
+                        <span class="data-header__label">
+                            In de competitie sinds:
+                            <span class="data-header__content">
+                                <a href="/afc-ajax/platzierungen/verein/610" title="">71 jaar</a>
+                            </span>
+                        </span>
+                                </div>
+        </div>
+            <div class="data-header__profile-container">
+                    <img src="https://img.a.transfermarkt.technology/wappen/head/610.png?lm=4711" title="AFC Ajax" alt="AFC Ajax" class="" />            </div>
+            <div class="data-header__box--small">
+
+                        <a href="/afc-ajax/kader/verein/610" class="data-header__market-value-wrapper">198,10 <span class="waehrung">mln. €</span>            <p class="data-header__last-update">
+                Totale MW            </p>
+            </a>
+        </div>
+            <div class="data-header__info-box ">
+        <div class="data-header__details">
+            <ul class="data-header__items">
+                <li class="data-header__label">
+                    Selectiespelers:
+                    <span itemprop="dataItem" class="data-header__content">
+                        28                    </span>
+                </li>
+                <li class="data-header__label">
+                    Gemiddelde leeftijd:
+                    <span itemprop="dataItem" class="data-header__content">
+                        25,6                    </span>
+                </li>
+                <li class="data-header__label">
+                    Buitenlandse spelers:
+                    <span itemprop="dataItem" class="data-header__content">
+                        <a href="/afc-ajax/legionaere/verein/610">18</a>&nbsp;&nbsp;<span class="tabellenplatz">64,3 %</span>                    </span>
+                </li>
+            </ul>
+            <ul class="data-header__items">
+                                    <li class="data-header__label">
+                        Act. A-internationals:
+                        <span itemprop="dataItem" class="data-header__content">
+                            <a href="/afc-ajax/nationalspieler/verein/610">9</a>                        </span>
+                    </li>
+                    <li class="data-header__label">
+                        Stadion:
+                        <span itemprop="dataItem" class="data-header__content">
+                            <a title="AFC Ajax" href="/ajax-amsterdam/stadion/verein/610">Johan Cruijff ArenA</a>&nbsp;&nbsp;<span class="tabellenplatz">55.885 plaatsen</span>                        </span>
+                    </li>
+                    <li class="data-header__label">
+                        Act. transferbalans:
+                        <span itemprop="dataItem" class="data-header__content">
+                                                        <span class="greentext">
+                                <a class="greentext" href="/afc-ajax/transfers/verein/610/saison_id/2026">+57,40 mln. €</a>                            </span>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+            <div class="data-header__toggle">
+            <div class="data-header__toggle-icon">+</div>
+            <ul class="data-header__list-clubs">
+                <li>
+                    <img src="https://img.a.transfermarkt.technology/wappen/tiny/610.png?lm=4711" title="AFC Ajax" alt="AFC Ajax" class="tiny_wappen" /><span><a title="AFC Ajax" href="/ajax-amsterdam/startseite/verein/610">AFC Ajax</a></span>                    </li><li>
+                    <img src="https://img.a.transfermarkt.technology/wappen/tiny/8817.png?lm=4711" title="Jong Ajax" alt="Jong Ajax" class="tiny_wappen" /><span><a title="Jong Ajax" href="/ajax-amsterdam-ii/startseite/verein/8817">Jong Ajax</a></span>                    </li><li>
+                    <img src="https://img.a.transfermarkt.technology/wappen/tiny/2824.png?lm=4711" title="Ajax Onder 19" alt="Ajax Onder 19" class="tiny_wappen" /><span><a title="Ajax Onder 19" href="/ajax-amsterdam-u19/startseite/verein/2824">Ajax Onder 19</a></span>                    </li><li>
+                    <img src="https://img.a.transfermarkt.technology/wappen/tiny/52068.png?lm=4711" title="Ajax Onder 18" alt="Ajax Onder 18" class="tiny_wappen" /><span><a title="Ajax Onder 18" href="/ajax-amsterdam-u18/startseite/verein/52068">Ajax Onder 18</a></span>                    </li><li>
+                    <img src="https://img.a.transfermarkt.technology/wappen/tiny/51645.png?lm=4711" title="Ajax Onder 17" alt="Ajax Onder 17" class="tiny_wappen" /><span><a title="Ajax Onder 17" href="/ajax-amsterdam-u17/startseite/verein/51645">Ajax Onder 17</a></span>                    </li><li>
+                    <img src="https://img.a.transfermarkt.technology/wappen/tiny/41580.png?lm=4711" title="Ajax UEFA U19" alt="Ajax UEFA U19" class="tiny_wappen" /><span><a title="Ajax UEFA U19" href="/ajax-amsterdam-uefa-u19/startseite/verein/41580">Ajax UEFA U19</a></span>                    </li><li>
+                    <img src="https://img.a.transfermarkt.technology/wappen/tiny/32791.png?lm=4711" title="Ajax Jeugd" alt="Ajax Jeugd" class="tiny_wappen" /><span><a title="Ajax Jeugd" href="/ajax-amsterdam-jugend/startseite/verein/32791">Ajax Jeugd</a></span>                    </li>            </ul>
+        </div>
+    </header>
+<script type="text/javascript">
+   const headerLinkList = document.querySelector('.data-header__toggle');
+    if (headerLinkList) {
+        headerLinkList.addEventListener('click', () => {
+            headerLinkList.classList.toggle('data-header__toggle--active');
+        })
+    };
+</script>
+<tm-subnavigation
+    controller="verein"
+    id="610"
+    season="2026"
+    section="verein"
+    style="display: block; margin: 0 5px;">
+</tm-subnavigation>
+
+    <div class="row">
+        <div class="large-8 columns">
+            <div class="box">
+                <h2 class="content-box-headline">
+                       Geruchten over vertrekkende spelers                </h2>
+                <p class="info-content">
+                    Dit overzicht biedt een overzicht van alle transfergeruchten die over de uitgekozen club gaan. Hierbij worden geruchten over vertrekkende en nieuwe spelers afzonderlijk opgesomd. Naast de waarschijnlijke wissels en de informatie over spelers krijgt men bij een klik op het gedetailleerde overzicht meer informatie, zoals bijvoorbeeld over de looptijd van de contracten van de spelers van de uitgekozen club.                </p>
+                
+<div class="tm-tabs">
+    <a class="tm-tab tm-tab__active--parent" href="/afc-ajax/geruechteabgaenge/verein/610"><div class=" tm-tab__active"><span>Compact</span></div></a><a class="tm-tab" href="/afc-ajax/geruechteabgaenge/verein/610/plus/1"><div class=""><span>Uitgebreid</span></div></a></div>
+                <div class="responsive-table">
+                    <div id="yw2" class="grid-view">
+<div class="summary"></div>
+<table class="items">
+<thead>
+<tr>
+<th class="zentriert" id="yw2_c0"></th><th id="yw2_c1">Speler</th><th class="zentriert" id="yw2_c2"><a class="sort-link" href="/ajax-amsterdam/geruechteabgaenge/verein/610/sort/age">Leeftijd</a></th><th class="zentriert" id="yw2_c3">Nat.</th><th class="zentriert" id="yw2_c4">Geïnteresseerde club</th><th class="rechts" id="yw2_c5"><a class="sort-link" href="/ajax-amsterdam/geruechteabgaenge/verein/610/sort/marktwert.desc">Marktwaarde</a></th><th class="zentriert" id="yw2_c6"><a class="sort-link desc" href="/ajax-amsterdam/geruechteabgaenge/verein/610/sort/datum_quelle">Laatste bron</a></th><th class="rechts" id="yw2_c7"><a class="sort-link" href="/ajax-amsterdam/geruechteabgaenge/verein/610/sort/wahrscheinlichkeit.desc">Waardering</a></th></tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td title="Middenveld" class="zentriert bg_Mittelfeld">&nbsp;</td><td><table class=inline-table><tr><td rowspan=2><a href="#"><img src="https://img.a.transfermarkt.technology/portrait/small/559324-1723819538.jpg?lm=4711" title="Youri Regeer" alt="Youri Regeer" class="bilderrahmen-fixed" /></a></td><td class=hauptlink><a title="Youri Regeer" href="/youri-regeer/profil/spieler/559324">Youri Regeer</a><span title="Hoofdblessure - Terugkeer onbekend" class="verletzt-table icons_sprite">&nbsp;</span></td></tr><tr><td>Defensief middenveld</td></tr></table></td><td class="zentriert">23</td><td class="zentriert"><img src="https://img.a.transfermarkt.technology/flagge/verysmall/122.png?lm=4711" title="Nederland" alt="Nederland" class="flaggenrahmen" /></td><td class="zentriert"><a title="SV Werder Bremen" href="/sv-werder-bremen/geruechte/verein/86"><img src="https://img.a.transfermarkt.technology/wappen/tiny/86.png?lm=4711" title="SV Werder Bremen" alt="SV Werder Bremen" class="tiny_wappen" /></a></td><td class="rechts hauptlink"><a href="/youri-regeer/marktwertverlauf/spieler/559324">5,00 mln. €</a>&nbsp;</td><td class="zentriert"><a title="Youri Regeer zu SV Werder Bremen?" href="https://www.transfermarkt.nl/youri-regeer-zu-sv-werder-bremen-/thread/forum/154/thread_id/1205784/post_id/3419714#3419714">31 aug. 2026</a></td><td class="rechts hauptlink">89 %&nbsp;<span class="icons_sprite green-arrow-ten" style="" title="Waardering gestegen in vergelijking met de vorige dag">&nbsp</span>&nbsp;&nbsp;<a title="Youri Regeer zu SV Werder Bremen?" class="icons_sprite icon-pinnwand-sprechblase sprechblase-wechselwahrscheinlichkeit" href="https://www.transfermarkt.nl/youri-regeer-zu-sv-werder-bremen-/thread/forum/154/thread_id/1205784/post_id/3419714#3419714">&nbsp;&nbsp;&nbsp;</a></td></tr>
+<tr class="even">
+<td title="Verdediging" class="zentriert bg_Abwehr">&nbsp;</td><td><table class=inline-table><tr><td rowspan=2><a href="#"><img src="https://img.a.transfermarkt.technology/portrait/small/559327-1689414712.jpg?lm=4711" title="Youri Baas" alt="Youri Baas" class="bilderrahmen-fixed" /></a></td><td class=hauptlink><a title="Youri Baas" href="/youri-baas/profil/spieler/559327">Youri Baas</a></td></tr><tr><td>Centrale verdediger</td></tr></table></td><td class="zentriert">23</td><td class="zentriert"><img src="https://img.a.transfermarkt.technology/flagge/verysmall/122.png?lm=4711" title="Nederland" alt="Nederland" class="flaggenrahmen" /></td><td class="zentriert"><a title="FC Porto" href="/fc-porto/geruechte/verein/720"><img src="https://img.a.transfermarkt.technology/wappen/tiny/720.png?lm=4711" title="FC Porto" alt="FC Porto" class="tiny_wappen" /></a></td><td class="rechts hauptlink"><a href="/youri-baas/marktwertverlauf/spieler/559327">20,00 mln. €</a>&nbsp;</td><td class="zentriert"><a title="Youri Baas to FC Porto?" href="https://www.transfermarkt.nl/youri-baas-to-fc-porto-/thread/forum/154/thread_id/1205806/post_id/3419497#3419497">31 aug. 2026</a></td><td class="rechts hauptlink">-&nbsp;&nbsp;&nbsp;<a title="Youri Baas to FC Porto?" class="icons_sprite icon-pinnwand-sprechblase sprechblase-wechselwahrscheinlichkeit" href="https://www.transfermarkt.nl/youri-baas-to-fc-porto-/thread/forum/154/thread_id/1205806/post_id/3419497#3419497">&nbsp;&nbsp;&nbsp;</a></td></tr>
+<tr class="odd">
+<td title="Aanval" class="zentriert bg_Sturm">&nbsp;</td><td><table class=inline-table><tr><td rowspan=2><a href="#"><img src="https://img.a.transfermarkt.technology/portrait/small/1162160-1720648195.jpg?lm=4711" title="Maher Carrizo" alt="Maher Carrizo" class="bilderrahmen-fixed" /></a></td><td class=hauptlink><a title="Maher Carrizo" href="/maher-carrizo/profil/spieler/1162160">Maher Carrizo</a><span title="Enkelblessure - Terugkeer onbekend" class="verletzt-table icons_sprite">&nbsp;</span></td></tr><tr><td>Rechtsbuiten</td></tr></table></td><td class="zentriert">20</td><td class="zentriert"><img src="https://img.a.transfermarkt.technology/flagge/verysmall/9.png?lm=4711" title="Argentinië" alt="Argentinië" class="flaggenrahmen" /></td><td class="zentriert"><a title="FC Kopenhagen" href="/fc-kopenhagen/geruechte/verein/190"><img src="https://img.a.transfermarkt.technology/wappen/tiny/190.png?lm=4711" title="FC Kopenhagen" alt="FC Kopenhagen" class="tiny_wappen" /></a></td><td class="rechts hauptlink"><a href="/maher-carrizo/marktwertverlauf/spieler/1162160">8,00 mln. €</a>&nbsp;</td><td class="zentriert"><a title="" href="//thread/forum/154/thread_id/1205759/post_id/3419448#3419448">31 aug. 2026</a></td><td class="rechts hauptlink">-&nbsp;&nbsp;&nbsp;<a title="" class="icons_sprite icon-pinnwand-sprechblase sprechblase-wechselwahrscheinlichkeit" href="//thread/forum/154/thread_id/1205759/post_id/3418960#3418960">&nbsp;&nbsp;&nbsp;</a></td></tr>
+<tr class="even">
+<td title="Verdediging" class="zentriert bg_Abwehr">&nbsp;</td><td><table class=inline-table><tr><td rowspan=2><a href="#"><img src="https://img.a.transfermarkt.technology/portrait/small/559327-1689414712.jpg?lm=4711" title="Youri Baas" alt="Youri Baas" class="bilderrahmen-fixed" /></a></td><td class=hauptlink><a title="Youri Baas" href="/youri-baas/profil/spieler/559327">Youri Baas</a></td></tr><tr><td>Centrale verdediger</td></tr></table></td><td class="zentriert">23</td><td class="zentriert"><img src="https://img.a.transfermarkt.technology/flagge/verysmall/122.png?lm=4711" title="Nederland" alt="Nederland" class="flaggenrahmen" /></td><td class="zentriert"><a title="Eintracht Frankfurt" href="/eintracht-frankfurt/geruechte/verein/24"><img src="https://img.a.transfermarkt.technology/wappen/tiny/24.png?lm=4711" title="Eintracht Frankfurt" alt="Eintracht Frankfurt" class="tiny_wappen" /></a></td><td class="rechts hauptlink"><a href="/youri-baas/marktwertverlauf/spieler/559327">20,00 mln. €</a>&nbsp;</td><td class="zentriert"><a title="Youri Baas zu Eintracht Frankfurt?" href="https://www.transfermarkt.nl/youri-baas-zu-eintracht-frankfurt-/thread/forum/154/thread_id/1204933/post_id/3414658#3414658">24 aug. 2026</a></td><td class="rechts hauptlink">31 %&nbsp;<span class="icons_sprite green-arrow-ten" style="" title="Waardering gestegen in vergelijking met de vorige dag">&nbsp</span>&nbsp;&nbsp;<a title="Youri Baas zu Eintracht Frankfurt?" class="icons_sprite icon-pinnwand-sprechblase sprechblase-wechselwahrscheinlichkeit" href="https://www.transfermarkt.nl/youri-baas-zu-eintracht-frankfurt-/thread/forum/154/thread_id/1204933/post_id/3415026#3415026">&nbsp;&nbsp;&nbsp;</a></td></tr>
+<tr class="odd">
+<td title="Aanval" class="zentriert bg_Sturm">&nbsp;</td><td><table class=inline-table><tr><td rowspan=2><a href="#"><img src="https://img.a.transfermarkt.technology/portrait/small/283196-1725633296.jpg?lm=4711" title="Kasper Dolberg" alt="Kasper Dolberg" class="bilderrahmen-fixed" /></a></td><td class=hauptlink><a title="Kasper Dolberg" href="/kasper-dolberg/profil/spieler/283196">Kasper Dolberg</a></td></tr><tr><td>Centrumspits</td></tr></table></td><td class="zentriert">28</td><td class="zentriert"><img src="https://img.a.transfermarkt.technology/flagge/verysmall/39.png?lm=4711" title="Denemarken" alt="Denemarken" class="flaggenrahmen" /></td><td class="zentriert"><a title="FC Midtjylland" href="/fc-midtjylland/geruechte/verein/865"><img src="https://img.a.transfermarkt.technology/wappen/tiny/865.png?lm=4711" title="FC Midtjylland" alt="FC Midtjylland" class="tiny_wappen" /></a></td><td class="rechts hauptlink"><a href="/kasper-dolberg/marktwertverlauf/spieler/283196">7,00 mln. €</a>&nbsp;</td><td class="zentriert"><a title="Kasper Dolberg naar FC Midtjylland?" href="https://www.transfermarkt.nl/kasper-dolberg-naar-fc-midtjylland-/thread/forum/154/thread_id/1192639/post_id/3399491#3399491">27 jul. 2026</a></td><td class="rechts hauptlink">-&nbsp;&nbsp;&nbsp;<a title="Kasper Dolberg naar FC Midtjylland?" class="icons_sprite icon-pinnwand-sprechblase sprechblase-wechselwahrscheinlichkeit" href="https://www.transfermarkt.nl/kasper-dolberg-naar-fc-midtjylland-/thread/forum/154/thread_id/1192639/post_id/3400748#3400748">&nbsp;&nbsp;&nbsp;</a></td></tr>
+<tr class="even">
+<td title="Middenveld" class="zentriert bg_Mittelfeld">&nbsp;</td><td><table class=inline-table><tr><td rowspan=2><a href="#"><img src="https://img.a.transfermarkt.technology/portrait/small/598491-1745075528.jpg?lm=4711" title="Rayane Bounida" alt="Rayane Bounida" class="bilderrahmen-fixed" /></a></td><td class=hauptlink><a title="Rayane Bounida" href="/rayane-bounida/profil/spieler/598491">Rayane Bounida</a><span title="Onbekende blessure - Terugkeer onbekend" class="verletzt-table icons_sprite">&nbsp;</span></td></tr><tr><td>Aanvallend middenveld</td></tr></table></td><td class="zentriert">20</td><td class="zentriert"><img src="https://img.a.transfermarkt.technology/flagge/verysmall/107.png?lm=4711" title="Marokko" alt="Marokko" class="flaggenrahmen" /><br /><img src="https://img.a.transfermarkt.technology/flagge/verysmall/19.png?lm=4711" title="België" alt="België" class="flaggenrahmen" /></td><td class="zentriert"><a title="Borussia Dortmund" href="/borussia-dortmund/geruechte/verein/16"><img src="https://img.a.transfermarkt.technology/wappen/tiny/16.png?lm=4711" title="Borussia Dortmund" alt="Borussia Dortmund" class="tiny_wappen" /></a></td><td class="rechts hauptlink"><a href="/rayane-bounida/marktwertverlauf/spieler/598491">5,00 mln. €</a>&nbsp;</td><td class="zentriert"><a title="Rayane Bounida zu Borussia Dortmund?" href="https://www.transfermarkt.nl/rayane-bounida-zu-borussia-dortmund-/thread/forum/154/thread_id/1200389/post_id/3398398#3398398">26 jul. 2026</a></td><td class="rechts hauptlink">-&nbsp;&nbsp;&nbsp;<a title="Rayane Bounida zu Borussia Dortmund?" class="icons_sprite icon-pinnwand-sprechblase sprechblase-wechselwahrscheinlichkeit" href="https://www.transfermarkt.nl/rayane-bounida-zu-borussia-dortmund-/thread/forum/154/thread_id/1200389/post_id/3398398#3398398">&nbsp;&nbsp;&nbsp;</a></td></tr>
+<tr class="odd">
+<td title="Verdediging" class="zentriert bg_Abwehr">&nbsp;</td><td><table class=inline-table><tr><td rowspan=2><a href="#"><img src="https://img.a.transfermarkt.technology/portrait/small/701055-1698669853.jpg?lm=4711" title="Anton Gaaei" alt="Anton Gaaei" class="bilderrahmen-fixed" /></a></td><td class=hauptlink><a title="Anton Gaaei" href="/anton-gaaei/profil/spieler/701055">Anton Gaaei</a></td></tr><tr><td>Rechtervleugelverdediger</td></tr></table></td><td class="zentriert">23</td><td class="zentriert"><img src="https://img.a.transfermarkt.technology/flagge/verysmall/39.png?lm=4711" title="Denemarken" alt="Denemarken" class="flaggenrahmen" /></td><td class="zentriert"><a title="Eintracht Frankfurt" href="/eintracht-frankfurt/geruechte/verein/24"><img src="https://img.a.transfermarkt.technology/wappen/tiny/24.png?lm=4711" title="Eintracht Frankfurt" alt="Eintracht Frankfurt" class="tiny_wappen" /></a></td><td class="rechts hauptlink"><a href="/anton-gaaei/marktwertverlauf/spieler/701055">5,00 mln. €</a>&nbsp;</td><td class="zentriert"><a title="Anton Gaaei naar Eintracht Frankfurt?" href="https://www.transfermarkt.nl/anton-gaaei-naar-eintracht-frankfurt-/thread/forum/154/thread_id/1198648/post_id/3394755#3394755">20 jul. 2026</a></td><td class="rechts hauptlink">-&nbsp;&nbsp;&nbsp;<a title="Anton Gaaei naar Eintracht Frankfurt?" class="icons_sprite icon-pinnwand-sprechblase sprechblase-wechselwahrscheinlichkeit" href="https://www.transfermarkt.nl/anton-gaaei-naar-eintracht-frankfurt-/thread/forum/154/thread_id/1198648/post_id/3394755#3394755">&nbsp;&nbsp;&nbsp;</a></td></tr>
+<tr class="even">
+<td title="Verdediging" class="zentriert bg_Abwehr">&nbsp;</td><td><table class=inline-table><tr><td rowspan=2><a href="#"><img src="https://img.a.transfermarkt.technology/portrait/small/701055-1698669853.jpg?lm=4711" title="Anton Gaaei" alt="Anton Gaaei" class="bilderrahmen-fixed" /></a></td><td class=hauptlink><a title="Anton Gaaei" href="/anton-gaaei/profil/spieler/701055">Anton Gaaei</a></td></tr><tr><td>Rechtervleugelverdediger</td></tr></table></td><td class="zentriert">23</td><td class="zentriert"><img src="https://img.a.transfermarkt.technology/flagge/verysmall/39.png?lm=4711" title="Denemarken" alt="Denemarken" class="flaggenrahmen" /></td><td class="zentriert"><a title="US Sassuolo" href="/us-sassuolo/geruechte/verein/6574"><img src="https://img.a.transfermarkt.technology/wappen/tiny/6574.png?lm=4711" title="US Sassuolo" alt="US Sassuolo" class="tiny_wappen" /></a></td><td class="rechts hauptlink"><a href="/anton-gaaei/marktwertverlauf/spieler/701055">5,00 mln. €</a>&nbsp;</td><td class="zentriert"><a title="US Sassuolo interessato a Anton Gaaei?" href="https://www.transfermarkt.nl/us-sassuolo-interessato-a-anton-gaaei-/thread/forum/154/thread_id/1196868/post_id/3379756#3379756">25 jun. 2026</a></td><td class="rechts hauptlink">-&nbsp;&nbsp;&nbsp;<a title="US Sassuolo interessato a Anton Gaaei?" class="icons_sprite icon-pinnwand-sprechblase sprechblase-wechselwahrscheinlichkeit" href="https://www.transfermarkt.nl/us-sassuolo-interessato-a-anton-gaaei-/thread/forum/154/thread_id/1196868/post_id/3379756#3379756">&nbsp;&nbsp;&nbsp;</a></td></tr>
+<tr class="odd">
+<td title="Verdediging" class="zentriert bg_Abwehr">&nbsp;</td><td><table class=inline-table><tr><td rowspan=2><a href="#"><img src="https://img.a.transfermarkt.technology/portrait/small/468309-1761068100.jpg?lm=4711" title="Lucas Rosa" alt="Lucas Rosa" class="bilderrahmen-fixed" /></a></td><td class=hauptlink><a title="Lucas Rosa" href="/lucas-rosa/profil/spieler/468309">Lucas Rosa</a></td></tr><tr><td>Rechtervleugelverdediger</td></tr></table></td><td class="zentriert">26</td><td class="zentriert"><img src="https://img.a.transfermarkt.technology/flagge/verysmall/26.png?lm=4711" title="Brazilië" alt="Brazilië" class="flaggenrahmen" /><br /><img src="https://img.a.transfermarkt.technology/flagge/verysmall/75.png?lm=4711" title="Italië" alt="Italië" class="flaggenrahmen" /></td><td class="zentriert"><a title="RC Celta de Vigo" href="/celta-vigo/geruechte/verein/940"><img src="https://img.a.transfermarkt.technology/wappen/tiny/940.png?lm=4711" title="RC Celta de Vigo" alt="RC Celta de Vigo" class="tiny_wappen" /></a></td><td class="rechts hauptlink"><a href="/lucas-rosa/marktwertverlauf/spieler/468309">5,00 mln. €</a>&nbsp;</td><td class="zentriert"><a title="Lucas Rosa naar RC Celta de Vigo?" href="https://www.transfermarkt.nl/lucas-rosa-naar-rc-celta-de-vigo-/thread/forum/154/thread_id/1194704/post_id/3371696#3371696">9 jun. 2026</a></td><td class="rechts hauptlink">-&nbsp;&nbsp;&nbsp;<a title="Lucas Rosa naar RC Celta de Vigo?" class="icons_sprite icon-pinnwand-sprechblase sprechblase-wechselwahrscheinlichkeit" href="https://www.transfermarkt.nl/lucas-rosa-naar-rc-celta-de-vigo-/thread/forum/154/thread_id/1194704/post_id/3371696#3371696">&nbsp;&nbsp;&nbsp;</a></td></tr>
+<tr class="even">
+<td title="Middenveld" class="zentriert bg_Mittelfeld">&nbsp;</td><td><table class=inline-table><tr><td rowspan=2><a href="#"><img src="https://img.a.transfermarkt.technology/portrait/small/598491-1745075528.jpg?lm=4711" title="Rayane Bounida" alt="Rayane Bounida" class="bilderrahmen-fixed" /></a></td><td class=hauptlink><a title="Rayane Bounida" href="/rayane-bounida/profil/spieler/598491">Rayane Bounida</a><span title="Onbekende blessure - Terugkeer onbekend" class="verletzt-table icons_sprite">&nbsp;</span></td></tr><tr><td>Aanvallend middenveld</td></tr></table></td><td class="zentriert">20</td><td class="zentriert"><img src="https://img.a.transfermarkt.technology/flagge/verysmall/107.png?lm=4711" title="Marokko" alt="Marokko" class="flaggenrahmen" /><br /><img src="https://img.a.transfermarkt.technology/flagge/verysmall/19.png?lm=4711" title="België" alt="België" class="flaggenrahmen" /></td><td class="zentriert"><a title="Borussia Mönchengladbach" href="/borussia-monchengladbach/geruechte/verein/18"><img src="https://img.a.transfermarkt.technology/wappen/tiny/18.png?lm=4711" title="Borussia Mönchengladbach" alt="Borussia Mönchengladbach" class="tiny_wappen" /></a></td><td class="rechts hauptlink"><a href="/rayane-bounida/marktwertverlauf/spieler/598491">5,00 mln. €</a>&nbsp;</td><td class="zentriert"><a title="Rayane Bounida to Borussia Mönchengladbach?" href="https://www.transfermarkt.nl/rayane-bounida-to-borussia-monchengladbach-/thread/forum/154/thread_id/1191145/post_id/3355758#3355758">24 apr. 2026</a></td><td class="rechts hauptlink">-&nbsp;&nbsp;&nbsp;<a title="Rayane Bounida to Borussia Mönchengladbach?" class="icons_sprite icon-pinnwand-sprechblase sprechblase-wechselwahrscheinlichkeit" href="https://www.transfermarkt.nl/rayane-bounida-to-borussia-monchengladbach-/thread/forum/154/thread_id/1191145/post_id/3396625#3396625">&nbsp;&nbsp;&nbsp;</a></td></tr>
+</tbody>
+</table>
+<div class="keys" style="display:none" title="/ajax-amsterdam/geruechteabgaenge/verein/610"><span>88.9524</span><span>0</span><span>0</span><span>31.3200</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span></div>
+</div>                </div>
+            </div>
+        </div>
+                    <div class="large-4 columns">
+                <div class="werbung ad-placement-note werbung-rectangle1" data-ad-placement-note="Reclame">
+  <div id="ASTAGQ_Rectangle"></div>
+</div>
+                <div class="werbung ad-placement-note werbung-rectangle2" data-ad-placement-note="Reclame">
+  <div id="ASTAGQ_Rectangle"></div>
+</div>
+            </div>
+            </div>
+        </main>
+        <footer class="tm-footer">
+               <section class="tm-footer__section-quick-links">
+        <strong class="tm-footer__headline tm-footer__headline--large">
+            snelkoppelingen        </strong>
+        <div class="tm-footer__link-wrapper">
+            <a href="/spieler-statistik/wertvollstespieler/marktwertetop"
+               onclick="tmEvent('footer', 'quick_links', '/spieler-statistik/wertvollstespieler')"
+               class="tm-footer__link tm-footer__link--arrow"
+            >
+                Meest waardevolle spelers ter wereld            </a>
+            <a href="/statistik/neuestetransfers"
+                onclick="tmEvent('footer', 'quick_links', '/statistik/neuestetransfers')"
+               class="tm-footer__link tm-footer__link--arrow"
+            >
+                Laatste transfers            </a>
+            <a href="/geruechte/aktuellegeruechte/statistik"
+                onclick="tmEvent('footer', 'quick_links', '/statistik/aktuellegeruechte')"
+               class="tm-footer__link tm-footer__link--arrow"
+            >
+                Laatste geruchten            </a>
+            <a href="/spieler-statistik/marktwertaenderungen/marktwertetop"
+                onclick="tmEvent('footer', 'quick_links', '/spieler-statistik/marktwertaenderungen/marktwertetop')"
+               class="tm-footer__link tm-footer__link--arrow"
+            >
+                Laatste marktwaardenupdates            </a>
+            <a href="/statistik/weltrangliste"
+                onclick="tmEvent('footer', 'quick_links', '/statistik/weltrangliste')"
+               class="tm-footer__link tm-footer__link--arrow"
+            >
+                FIFA-wereldranglijst            </a>
+                        <a href="/wedden/"
+                onclick="tmEvent('footer', 'quick_links', '/wedden/')"
+               class="tm-footer__link tm-footer__link--arrow"
+            >
+                Wedden            </a>
+                    </div>
+    </section>
+                <section class="tm-footer__section-involved">
+            <strong class="tm-footer__headline tm-footer__headline--large">
+                Neem Deel            </strong>
+            <div class="tm-footer__link-wrapper">
+                <a href="/intern/paten"
+                    onclick="tmEvent('footer', 'be_involved', 'mods_data_scouts')"
+                   class="tm-footer__link tm-footer__link--arrow"
+                >
+                    Moderators en datascouts                </a>
+                <a href="/profil/bewerbung"
+                    onclick="tmEvent('footer', 'be_involved', 'apply_mod_datascout')"
+                   class="tm-footer__link tm-footer__link--arrow"
+                >
+                    Meld je aan als moderator of datascout                </a>
+                <a href="/intern/elfGebote"
+                    onclick="tmEvent('footer', 'be_involved', '11_commandments')"
+                   class="tm-footer__link tm-footer__link--arrow"
+                >
+                    De 11 Geboden                </a>
+                <a href="/intern/fehlermelden"
+                    onclick="tmEvent('footer', 'be_involved', 'found_mistake')"
+                   class="tm-footer__link tm-footer__link--arrow"
+                >
+                    Fout gevonden?                </a>
+            </div>
+        </section>
+        <section class="tm-footer__section-career">
+            <strong class="tm-footer__headline tm-footer__headline--large">
+                Carrière            </strong>
+            <div class="tm-footer__link-wrapper">
+                                <a href="/intern/tmteam"
+                   class="tm-footer__link tm-footer__link--arrow"
+                   onclick="tmEvent('footer', 'career', 'contact')"
+                >
+                    Contact                </a>
+            </div>
+        </section>
+        <section class="tm-footer__section-about">
+            <strong class="tm-footer__headline tm-footer__headline--large">
+                Over ons            </strong>
+            <div class="tm-footer__link-wrapper">
+                <a href="/intern/tmteam"
+                   onclick="tmEvent('footer', 'about_us', 'tm_team')"
+                   class="tm-footer__link tm-footer__link--arrow"
+                >
+                    Het TM-Team                </a>
+                <a href="/intern/faq"
+                   onclick="tmEvent('footer', 'about_us', 'faq')"
+                   class="tm-footer__link tm-footer__link--arrow"
+                >
+                    FAQ                </a>
+            </div>
+        </section>
+            <section class="tm-footer__section-social">
+        <strong class="tm-footer__headline
+            ">
+            Social Media        </strong>
+        <div class="tm-footer__social-wrapper">
+                        <a href="https://www.instagram.com/transfermarkt.nl"
+                   target="_blank"
+                   class="tm-footer__link-social"
+                   onclick="tmEvent('footer', 'social_media', 'instagram')"
+                >
+                    <img src="https://tmsi.akamaized.net/icons/socialMedia/instaRebrush.svg"
+                         alt="instagram"
+                         width="28"
+                         height="28"
+                         class="tm-footer__icon-social"
+                    >
+                </a>
+                <a href="https://www.facebook.com/Transfermarkt.nl"
+                   target="_blank"
+                   class="tm-footer__link-social"
+                   onclick="tmEvent('footer', 'social_media', 'facebook')">
+                    <img src="https://tmsi.akamaized.net/icons/socialMedia/fbRebrush.svg"
+                         alt="facebook"
+                         width="25"
+                         height="25"
+                         class="tm-footer__icon-social"
+                    >
+                </a>
+                <a href="https://www.whatsapp.com/channel/0029Va6Kevx47XeF0gE99J35"
+                   target="_blank"
+                   class="tm-footer__link-social"
+                   onclick="tmEvent('footer', 'social_media', 'whatsapp')"
+                >
+                    <img src="https://tmsi.akamaized.net/icons/socialMedia/whatsappRebrush.svg"
+                         alt="whatsapp"
+                         width="28"
+                         height="28"
+                         class="tm-footer__icon-social"
+                    >
+                </a>
+                <a href="https://twitter.com/TMuk_news"
+                   target="_blank"
+                   class="tm-footer__link-social"
+                   onclick="tmEvent('footer', 'social_media', 'x')">
+                    <img src="https://tmsi.akamaized.net/icons/socialMedia/twitter_rebrush.svg"
+                         alt="x"
+                         width="28"
+                         height="28"
+                         class="tm-footer__icon-social"
+                    >
+                </a>
+                <a href="https://www.threads.net/@transfermarkt.nl"
+                   target="_blank"
+                   class="tm-footer__link-social"
+                   onclick="tmEvent('footer', 'social_media', 'threads')"
+                >
+                    <img src="https://tmsi.akamaized.net/icons/socialMedia/threadsRebrush.svg"
+                         alt="threads"
+                         width="28"
+                         height="28"
+                         class="tm-footer__icon-social"
+                    >
+                </a>
+                <a href="https://www.tiktok.com/@transfermarkt"
+                   target="_blank"
+                   class="tm-footer__link-social"
+                   onclick="tmEvent('footer', 'social_media', 'tiktok')"
+                >
+                    <img src="https://tmsi.akamaized.net/icons/socialMedia/tiktokRebrush.svg"
+                         alt="tiktok"
+                         width="28"
+                         height="28"
+                         class="tm-footer__icon-social"
+                    >
+                </a>
+                <a href="https://www.youtube.com/@TransfermarktEnglish"
+                   target="_blank"
+                   class="tm-footer__link-social"
+                   onclick="tmEvent('footer', 'social_media', 'youtube')"
+                >
+                    <img src="https://tmsi.akamaized.net/icons/socialMedia/RebrushYoutube.svg"
+                         alt="youtube"
+                         width="28"
+                         height="28"
+                         class="tm-footer__icon-social"
+                    >
+                </a>
+                <a href="https://www.transfermarkt.nl/intern/rssguide"
+                   target="_blank"
+                   class="tm-footer__link-social"
+                   onclick="tmEvent('footer', 'social_media', 'rss')"
+                >
+                    <img src="https://tmsi.akamaized.net/icons/socialMedia/RebrushRss.svg"
+                         alt="rss"
+                         width="28"
+                         height="28"
+                         class="tm-footer__icon-social"
+                    >
+                </a>
+                <a href="https://www.linkedin.com/company/transfermarkt-gmbh-&-co-kg"
+                   target="_blank"
+                   class="tm-footer__link-social"
+                   onclick="tmEvent('footer', 'social_media', 'linkedIn')"
+                >
+                    <img src="https://tmsi.akamaized.net/icons/socialMedia/linkedInRebrush.svg"
+                         alt="linkedIn"
+                         width="28"
+                         height="28"
+                         class="tm-footer__icon-social"
+                    >
+                </a>
+                        </div>
+    </section>
+                </footer>
+                <div id="menue_overlay"></div>
+    </div>
+    <section class="tm-footer__mobile tm-footer__transfermarkt-info">
+        <section class="tm-footer__section-desktop-width">
+                            <section class="tm-footer__section-company-links">
+                    <span class="tm-footer__headline tm-footer__headline--medium">
+                        Andere projecten van Transfermarkt                    </span>
+                    <div class="tm-footer__project-wrapper">
+                        <a href="/wahretabelle"
+                           onclick="tmEvent('footer', 'projects', 'wahretabelle')"
+                           class="tm-footer__link"
+                        >
+                            Wahretabelle                        </a>
+                        <a href="https://www.soccerdonna.de/"
+                           onclick="tmEvent('footer', 'projects', 'soccerdonna')"
+                           class="tm-footer__link"
+                        >
+                            SoccerDonna.de                        </a>
+                        <a href="https://scoutastic.com/de/"
+                           onclick="tmEvent('footer', 'projects', 'scoutastic')"
+                           class="tm-footer__link"
+                        >
+                            Scoutastic.com                        </a>
+                    </div>
+                </section>
+                        <section class="tm-footer__section-company-infos">
+                <span class="tm-footer__headline tm-footer__headline--medium">&copy; Transfermarkt <span id="currentYear">2026</span></span>
+                <div class="tm-footer__company-wrapper">
+                    <a
+                    href="/intern/impressum"
+                    class="tm-footer__link tm-footer__link--blue"
+                    onclick="tmEvent('footer', 'officials', 'impressum')"
+                    >
+                        Colofon                    </a>
+                    <a
+                        href="/intern/web/datenschutz"
+                        class="tm-footer__link tm-footer__link--blue"
+                        onclick="tmEvent('footer', 'officials', 'data_protection')"
+                        >
+                        Gegevensbescherming                    </a>
+                    <a
+                        href="javascript:void(0)"
+                        class="cmp-link tm-footer__link tm-footer__link--blue"
+                        onclick="tmEvent('footer', 'officials', 'privacy')"
+                    >
+                        Privacy                    </a>
+                    <a
+                        href="javascript:void(0)"
+                        class="revoke-tracking tm-footer__link tm-footer__link--blue"
+                        onclick="tmEvent('footer', 'officials', 'tracking_revocation')"
+                    >
+                        Tracking intrekken                    </a>
+                    <a
+                        href="/intern/anb"
+                        class="tm-footer__link tm-footer__link--blue"
+                        onclick="tmEvent('footer', 'officials', 'general_conduct_of_use')"
+                        >
+                        Gebruiksvoorwaarden                    </a>
+                                    </div>
+            </section>
+        </section>
+    </section>
+    <script type="text/javascript">
+	if(typeof(adet) == "boolean" && adet == false){
+		img_src="/static/singlepictures/jk99hhfsdh209nbnkjldgh90sghfsdlk";
+	} else {
+		img_src="/static/singlepictures/jku90whjlkjbwbta1g4b8h89fh8sgh8d";
+	}
+	var elem = document.createElement("img");
+	document.body.appendChild(elem);
+	elem.src = img_src;
+</script>
+
+    <tm-consent type="adition" no-checkbox embed="PHNjcmlwdCBzcmM9Imh0dHBzOi8vY3JlYXRpdmUtY2RuLm9kZHNzZXJ2ZS5jb20vbG9hZGVyLmpzP3B1Ymxpc2hlcj10bSIgYXN5bmM9ImFzeW5jIj48L3NjcmlwdD4="></tm-consent><tm-consent type='adrenalead' no-checkbox embed='PHNjcmlwdCB0eXBlPSd0ZXh0L2phdmFzY3JpcHQnPgogICAgICAgICAgICB3aW5kb3cuX25BZHpxPXdpbmRvdy5fbkFkenF8fFtdOyhmdW5jdGlvbigpewogICAgICAgICAgICB3aW5kb3cuX25BZHpxLnB1c2goWydzZXRJZHMnLCdkMjdiY2M1ZWI3ZDc2MTg1J10pOwogICAgICAgICAgICB2YXIgZT0naHR0cHM6Ly9ub3RpZnB1c2guY29tL3NjcmlwdHMvJzsKICAgICAgICAgICAgdmFyIHQ9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc2NyaXB0Jyk7CiAgICAgICAgICAgIHQudHlwZT0ndGV4dC9qYXZhc2NyaXB0JzsKICAgICAgICAgICAgdC5kZWZlcj10cnVlOwogICAgICAgICAgICB0LmFzeW5jPXRydWU7CiAgICAgICAgICAgIHQuc3JjPWUrJ25hZHotc2RrLmpzJzsKICAgICAgICAgICAgdmFyIHM9ZG9jdW1lbnQuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ3NjcmlwdCcpWzBdOwogICAgICAgICAgICBzLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKHQscyl9KSgpOwogICAgICAgIDwvc2NyaXB0Pg=='></tm-consent>    
+        <tm-modal id="tm-modal-revoke-tracking" additionalClose="Sluiten">
+        <div class="tm-modal__headline">Tracking intrekken</div>
+        <p class="tm-modal__text">Je hebt je toestemming voor het gebruik van Transfermarkt met tracking en cookies met succes ingetrokken. Je kunt nu kiezen tussen een abonnement op Contentpass en het gebruik met gepersonaliseerde reclame, cookies en tracking.</p>
+    </tm-modal>
+        
+
+<tm-consent type="webads" no-checkbox embed="PHNjcmlwdCAgc3JjPSJodHRwczovL25vamF6ei5ldS9ubC9jbGllbnQvdHJhbnNmZXJtYXJrdC5ubC9pbml0aWF0b3IuanMiIGFzeW5jPSJhc3luYyIgcHJpb3JpdHk9ImhpZ2giPjwvc2NyaXB0Pg=="></tm-consent>
+<script type="text/javascript" src="https://tmsi.akamaized.net/js/svelte-components/subnavigation/bundle.js"></script>
+<script type="text/javascript" src="https://tmssl.akamaized.net/assets/aa69c6e9c51f1e811847082c63633956/gridview/jquery.yiigridview.js?lm=1788175395"></script>
+<script type="text/javascript" src="https://tmssl.akamaized.net/js/custom/vendors.min.js?lm=1788175395"></script>
+<script type="text/javascript" src="https://tmsi.akamaized.net/js/svelte-components/domain-switcher/bundle.js"></script>
+<script type="text/javascript" src="https://tmsi.akamaized.net/js/svelte-components/quick-select-bar/bundle.js"></script>
+<script type="text/javascript" src="https://tmsi.akamaized.net/js/svelte-components/userbox/bundle.js"></script>
+<script type="text/javascript" src="https://tmsi.akamaized.net/js/svelte-components/live-match-count/bundle.js"></script>
+<script type="text/javascript" src="https://tmsi.akamaized.net/js/svelte-components/modal/bundle.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+	var loginUrl='/profil/login';
+	var onlyDE = '';
+	var onlyMobile = '';
+	var onlyTablet = '';
+	var getUserID = '';
+
+jQuery(function($) {
+jQuery('#yw2').yiiGridView({'ajaxUpdate':['yw2'],'ajaxVar':'ajax','pagerClass':'pager','loadingClass':'grid\x2Dview\x2Dloading','filterClass':'filters','tableClass':'items','selectableRows':1,'enableHistory':false,'updateSelector':'\x7Bpage\x7D,\x20\x7Bsort\x7D','filterSelector':'\x7Bfilter\x7D','pageVar':'page'});
+});
+/*]]>*/
+</script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+AJAX NIEUWS DASHBOARD v6.7 ONLINE
+
+Gebaseerd op V6.6.
+
+Nieuw:
+- Geschikt voor Render.
+- Gebruikt online automatisch de PORT die Render opgeeft.
+- Luistert op 0.0.0.0 zodat de site extern bereikbaar is.
+- Lokaal blijft poort 8765 werken.
+- Geen login of wachtwoord op de website.
+- render.yaml toegevoegd.
+
+Lokaal:
+1. Pak de ZIP uit.
+2. Start start_ajax.bat.
+3. Open http://localhost:8765
+
+Render start command:
+python ajax_nieuws.py

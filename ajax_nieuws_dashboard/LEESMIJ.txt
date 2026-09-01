@@ -1,3 +1,7 @@
+AJAX NIEUWS DASHBOARD v6.8 MOBILE
+
+Nieuw: dezelfde site past zich nu automatisch aan telefoons aan. De desktop/tv-layout blijft ongewijzigd. Op mobiel wordt de rode navigatie een compacte bovenbalk, nieuws schaalt mee en brede stand/Transfermarkt-tabellen kunnen horizontaal worden gescrold.
+
 AJAX NIEUWS DASHBOARD v6.7 ONLINE
 
 Gebaseerd op V6.6.

@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: ajax-nieuws
+    runtime: python
+    plan: free
+    buildCommand: echo "Geen buildstap nodig"
+    startCommand: python ajax_nieuws.py

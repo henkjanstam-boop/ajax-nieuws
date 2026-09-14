@@ -180,7 +180,7 @@ def fetch_stand():
         text=text[anchor:anchor+30000]
 
     club_alt='|'.join(re.escape(c) for c in sorted(clubs,key=len,reverse=True))
-    # Official order is #, Club, GS, W, V, G, DV-DT, DS, P.
+    # Official order is #, Club, GS, W, G, V, DV-DT, DS, P.
     pat=re.compile(
         rf'(?:^|\|\s*)(1[0-8]|[1-9])\s*\|\s*'
         rf'({club_alt})\s*\|\s*'
@@ -191,7 +191,7 @@ def fetch_stand():
 
     rows=[]
     for m in pat.finditer(text):
-        pos,club,gs,w,v,g,goals,ds,pts=[x.strip() for x in m.groups()]
+        pos,club,gs,w,g,v,goals,ds,pts=[x.strip() for x in m.groups()]
         rows.append({"pos":pos,"club":club,"gs":gs,"w":w,"g":g,"v":v,
                      "goals":goals.replace(" ",""),"ds":ds,"pts":pts})
 
@@ -202,7 +202,7 @@ def fetch_stand():
         compact=re.sub(r'\|\s*(?:Image:\s*Logo\s+)?([^|]+?)\s*\|',lambda m:' | '+m.group(1).strip()+' | ',compact)
         rows=[]
         for m in pat.finditer(compact):
-            pos,club,gs,w,v,g,goals,ds,pts=[x.strip() for x in m.groups()]
+            pos,club,gs,w,g,v,goals,ds,pts=[x.strip() for x in m.groups()]
             rows.append({"pos":pos,"club":club,"gs":gs,"w":w,"g":g,"v":v,
                          "goals":goals.replace(" ",""),"ds":ds,"pts":pts})
 
@@ -212,24 +212,24 @@ def fetch_stand():
     # live parsing succeeds.
     if len(rows)!=18:
         rows=[
-          {"pos":"1","club":"AZ","gs":"4","w":"4","g":"0","v":"0","goals":"13-3","ds":"+10","pts":"12"},
-          {"pos":"2","club":"PSV","gs":"3","w":"2","g":"1","v":"0","goals":"9-4","ds":"+5","pts":"7"},
-          {"pos":"3","club":"Feyenoord","gs":"3","w":"2","g":"1","v":"0","goals":"8-4","ds":"+4","pts":"7"},
-          {"pos":"4","club":"Go Ahead Eagles","gs":"4","w":"2","g":"1","v":"1","goals":"11-9","ds":"+2","pts":"7"},
-          {"pos":"5","club":"Fortuna Sittard","gs":"4","w":"2","g":"1","v":"1","goals":"8-7","ds":"+1","pts":"7"},
-          {"pos":"6","club":"N.E.C. Nijmegen","gs":"3","w":"2","g":"0","v":"1","goals":"8-4","ds":"+4","pts":"6"},
-          {"pos":"7","club":"Excelsior Rotterdam","gs":"3","w":"2","g":"0","v":"1","goals":"7-3","ds":"+4","pts":"6"},
-          {"pos":"8","club":"FC Groningen","gs":"4","w":"2","g":"0","v":"2","goals":"9-10","ds":"-1","pts":"6"},
-          {"pos":"9","club":"Ajax","gs":"2","w":"1","g":"1","v":"0","goals":"4-2","ds":"+2","pts":"4"},
-          {"pos":"10","club":"sc Heerenveen","gs":"3","w":"1","g":"1","v":"1","goals":"3-4","ds":"-1","pts":"4"},
-          {"pos":"11","club":"Sparta Rotterdam","gs":"4","w":"1","g":"1","v":"2","goals":"7-7","ds":"0","pts":"4"},
-          {"pos":"12","club":"FC Twente","gs":"2","w":"1","g":"0","v":"1","goals":"3-2","ds":"+1","pts":"3"},
-          {"pos":"13","club":"Telstar","gs":"2","w":"1","g":"0","v":"1","goals":"3-4","ds":"-1","pts":"3"},
-          {"pos":"14","club":"PEC Zwolle","gs":"4","w":"1","g":"0","v":"3","goals":"4-8","ds":"-4","pts":"3"},
-          {"pos":"15","club":"FC Utrecht","gs":"3","w":"0","g":"1","v":"2","goals":"5-9","ds":"-4","pts":"1"},
-          {"pos":"16","club":"Willem II","gs":"2","w":"0","g":"0","v":"2","goals":"2-8","ds":"-6","pts":"0"},
-          {"pos":"17","club":"ADO Den Haag","gs":"3","w":"0","g":"0","v":"3","goals":"2-9","ds":"-7","pts":"0"},
-          {"pos":"18","club":"SC Cambuur","gs":"3","w":"0","g":"0","v":"3","goals":"3-12","ds":"-9","pts":"0"}
+          {"pos":"1","club":"PSV","gs":"6","w":"5","g":"1","v":"0","goals":"22-7","ds":"+15","pts":"16"},
+          {"pos":"2","club":"AZ","gs":"6","w":"5","g":"1","v":"0","goals":"17-6","ds":"+11","pts":"16"},
+          {"pos":"3","club":"Feyenoord","gs":"6","w":"4","g":"2","v":"0","goals":"20-7","ds":"+13","pts":"14"},
+          {"pos":"4","club":"FC Twente","gs":"6","w":"4","g":"1","v":"1","goals":"12-5","ds":"+7","pts":"13"},
+          {"pos":"5","club":"Ajax","gs":"5","w":"3","g":"1","v":"1","goals":"14-6","ds":"+8","pts":"10"},
+          {"pos":"6","club":"Excelsior Rotterdam","gs":"6","w":"3","g":"1","v":"2","goals":"13-7","ds":"+6","pts":"10"},
+          {"pos":"7","club":"Fortuna Sittard","gs":"6","w":"3","g":"1","v":"2","goals":"12-14","ds":"-2","pts":"10"},
+          {"pos":"8","club":"Go Ahead Eagles","gs":"6","w":"2","g":"3","v":"1","goals":"15-13","ds":"+2","pts":"9"},
+          {"pos":"9","club":"FC Groningen","gs":"6","w":"2","g":"2","v":"2","goals":"12-13","ds":"-1","pts":"8"},
+          {"pos":"10","club":"N.E.C. Nijmegen","gs":"6","w":"2","g":"1","v":"3","goals":"11-12","ds":"-1","pts":"7"},
+          {"pos":"11","club":"sc Heerenveen","gs":"6","w":"1","g":"3","v":"2","goals":"7-9","ds":"-2","pts":"6"},
+          {"pos":"12","club":"Sparta Rotterdam","gs":"6","w":"1","g":"2","v":"3","goals":"10-13","ds":"-3","pts":"5"},
+          {"pos":"13","club":"Telstar","gs":"6","w":"1","g":"2","v":"3","goals":"5-11","ds":"-6","pts":"5"},
+          {"pos":"14","club":"FC Utrecht","gs":"6","w":"1","g":"2","v":"3","goals":"11-19","ds":"-8","pts":"5"},
+          {"pos":"15","club":"SC Cambuur","gs":"6","w":"1","g":"1","v":"4","goals":"9-18","ds":"-9","pts":"4"},
+          {"pos":"16","club":"PEC Zwolle","gs":"6","w":"1","g":"1","v":"4","goals":"6-17","ds":"-11","pts":"4"},
+          {"pos":"17","club":"Willem II","gs":"5","w":"0","g":"2","v":"3","goals":"5-14","ds":"-9","pts":"2"},
+          {"pos":"18","club":"ADO Den Haag","gs":"6","w":"0","g":"1","v":"5","goals":"6-16","ds":"-10","pts":"1"}
         ]
     return rows
 

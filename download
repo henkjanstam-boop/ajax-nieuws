@@ -1,0 +1,3 @@
+__pycache__/
+*.pyc
+transfermarkt_debug_*.html

@@ -1,3 +1,11 @@
+AJAX NIEUWS DASHBOARD v6.10
+
+Nieuw in v6.10:
+- Stand: kolommen G (gelijk) en V (verlies) correct gekoppeld aan de officiële Eredivisie-volgorde.
+- Nood-fallback van de stand bijgewerkt.
+- Bevestigde transfers na Sofyan Amrabat toegevoegd, inclusief deadline-day transfers.
+- Behoudt de fixes uit v6.9 (uitgelicht nieuws klikbaar, Over Ajax verwijderd).
+
 AJAX NIEUWS DASHBOARD v6.8 MOBILE
 
 Nieuw: dezelfde site past zich nu automatisch aan telefoons aan. De desktop/tv-layout blijft ongewijzigd. Op mobiel wordt de rode navigatie een compacte bovenbalk, nieuws schaalt mee en brede stand/Transfermarkt-tabellen kunnen horizontaal worden gescrold.

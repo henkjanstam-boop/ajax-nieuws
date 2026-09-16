@@ -134,17 +134,35 @@
 
   .squad-summary{grid-template-columns:repeat(2,1fr)}
   .squad-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  /* V6.13.1: selectie compacter op mobiel. De spelersnaam hoeft hier
-     niet de brede desktopkolom te houden; overige stats blijven zichtbaar. */
-  .squad-head,.squad-row{
-    min-width:690px;
-    grid-template-columns:42px 130px 92px 54px 52px 58px 42px 42px 78px;
-    padding:0 10px
+  /* V6.13.2: selectie als compacte mobiele kaart. Geen horizontaal scrollen:
+     naam/positie boven, alle statistieken eronder. */
+  .squad-wrap{overflow:visible}
+  .squad-head{display:none}
+  .squad-row{
+    min-width:0;width:100%;
+    grid-template-columns:34px minmax(0,1fr) 82px repeat(6,minmax(0,1fr));
+    grid-template-rows:auto auto;
+    gap:5px 4px;
+    padding:10px 8px 9px;
+    align-items:center
   }
-  .squad-row .player{font-size:13px;line-height:1.15;white-space:normal}
-  .squad-row .pos{font-size:11px}
-  .squad-head{font-size:9px;letter-spacing:.4px}
-  .squad-row .stat{font-size:12px}
+  .squad-row .nr{grid-column:1;grid-row:1;font-size:14px;font-weight:950}
+  .squad-row .player{grid-column:2;grid-row:1;font-size:13px;line-height:1.15;white-space:normal;font-weight:900}
+  .squad-row .pos{grid-column:3 / -1;grid-row:1;font-size:10px;text-align:right;color:#91a0aa}
+  .squad-row .stat{grid-row:2;font-size:11px;text-align:center;min-width:0;padding-top:13px;position:relative}
+  .squad-row .stat:nth-child(4){grid-column:2}
+  .squad-row .stat:nth-child(5){grid-column:3}
+  .squad-row .stat:nth-child(6){grid-column:4}
+  .squad-row .stat:nth-child(7){grid-column:5}
+  .squad-row .stat:nth-child(8){grid-column:6}
+  .squad-row .stat:nth-child(9){grid-column:7 / -1}
+  .squad-row .stat:before{position:absolute;top:0;left:0;right:0;color:#73818a;font-size:7px;font-weight:900;letter-spacing:.3px}
+  .squad-row .stat:nth-child(4):before{content:"WED"}
+  .squad-row .stat:nth-child(5):before{content:"GOAL"}
+  .squad-row .stat:nth-child(6):before{content:"ASS"}
+  .squad-row .stat:nth-child(7):before{content:"🟨"}
+  .squad-row .stat:nth-child(8):before{content:"🟥"}
+  .squad-row .stat:nth-child(9):before{content:"MIN"}
 }
 
 @media(max-width:430px){
@@ -388,7 +406,7 @@ async function loadSquad(){
     const order=["Keeper","Verdediger","Middenvelder","Aanvaller"];
     document.getElementById("squadRows").innerHTML=order.map(pos=>{
       const a=d.players.filter(x=>x.position===pos);if(!a.length)return "";
-      return `<section class="squad-group"><div class="squad-group-title">${squadGroupLabel(pos)}</div><div class="squad-wrap"><div class="squad-head"><div>#</div><div>SPELER</div><div>POSITIE</div><div>WED.</div><div>GOALS</div><div>ASSISTS</div><div>🟨</div><div>🟥</div><div>MINUTEN</div></div>${a.map(x=>`<div class="squad-row"><div class="nr">${esc(x.number||"–")}</div><div class="player">${esc(x.name)}</div><div class="pos">${esc(x.position)}</div><div class="stat">${esc(x.games)}</div><div class="stat">${esc(x.goals)}</div><div class="stat">${esc(x.assists)}</div><div class="stat">${esc(x.yellow)}</div><div class="stat">${esc(x.red)}</div><div class="stat">${esc(x.minutes)} min</div></div>`).join("")}</div></section>`
+      return `<section class="squad-group"><div class="squad-group-title">${squadGroupLabel(pos)}</div><div class="squad-wrap"><div class="squad-head"><div>#</div><div>SPELER</div><div>POSITIE</div><div>WED.</div><div>GOALS</div><div>ASSISTS</div><div>🟨</div><div>🟥</div><div>MINUTEN</div></div>${a.map(x=>`<div class="squad-row"><div class="nr">${esc(x.number||"–")}</div><div class="player">${esc(x.name)}</div><div class="pos">${esc(x.position)}</div><div class="stat">${esc(x.games)}</div><div class="stat">${esc(x.goals)}</div><div class="stat">${esc(x.assists)}</div><div class="stat">${esc(x.yellow)}</div><div class="stat">${esc(x.red)}</div><div class="stat">${esc(x.minutes)}</div></div>`).join("")}</div></section>`
     }).join("");
     document.getElementById("squadCount").textContent=d.players.length;
     document.getElementById("squadGames").textContent=d.team_games??"–";

@@ -249,65 +249,83 @@ def fetch_stand():
           {"pos":"18","club":"ADO Den Haag","gs":"6","w":"0","g":"1","v":"5","goals":"6-16","ds":"-10","pts":"1"}
         ]
     return rows
-EREDIVISIE_AJAX="https://eredivisie.nl/competitie/clubs/ajax/"
+AFC_AJAX_SQUAD="https://www.afc-ajax.info/nl/overzicht/selectie-huidige-seizoen"
 
-def _text_page(page):
-    s=htmlmod.unescape(page)
-    s=re.sub(r'<(?:br|/p|/div|/li|/span|/h1|/h2|/h3|/td|/th|/tr)\b[^>]*>', '\n', s, flags=re.I)
-    s=re.sub(r'<[^>]+>', ' ', s)
-    return re.sub(r'[ \t]+',' ',s)
+# Actuele rugnummers/posities van Ajax 1. De statistieken zelf komen NIET uit
+# deze lijst, maar live van AFC-Ajax.info. Deze mapping voorkomt dat rugnummers
+# uit willekeurige HTML-fragmenten worden afgeleid.
+AJAX_ROSTER_2627=[
+    ("1","Marc ter Stegen","Keeper"),("22","Joeri Heerkens","Keeper"),("26","Maarten Paes","Keeper"),
+    ("2","Lucas Rosa","Verdediger"),("3","Anton Gaaei","Verdediger"),("5","Owen Wijndal","Verdediger"),
+    ("6","Thilo Kehrer","Verdediger"),("12","Caio Henrique","Verdediger"),("15","Youri Baas","Verdediger"),
+    ("17","Daley Blind","Verdediger"),("21","Jofre Torrents","Verdediger"),("30","Aaron Bouwman","Verdediger"),
+    ("36","Dies Janse","Verdediger"),("57","Jinairo Johnson","Verdediger"),
+    ("4","Sofyan Amrabat","Middenvelder"),("8","Julian Brandt","Middenvelder"),("10","Oscar Gloukh","Middenvelder"),
+    ("18","Davy Klaassen","Middenvelder"),("24","Jorthy Mokio","Middenvelder"),("67","Mohamed Abdalla","Middenvelder"),
+    ("68","Abdellah Ouazane","Middenvelder"),
+    ("7","Simon Adingra","Aanvaller"),("9","Kasper Dolberg","Aanvaller"),("11","Viktor Tsygankov","Aanvaller"),
+    ("20","Oliver Edvardsen","Aanvaller"),("23","Steven Berghuis","Aanvaller"),("38","Marcos Leonardo","Aanvaller"),
+    ("43","Rayane Bounida","Aanvaller"),("99","Tolu Arokodare","Aanvaller")
+]
 
-def _player_stats(url, number="", position=""):
-    page=fetch_html(url,15)
-    text=_text_page(page)
-    # Gebruik de spelersslug als betrouwbare naambron. De paginatitel begint
-    # tegenwoordig met "VriendenLoterij Eredivisie | ..." en leverde daardoor
-    # in V6.12.1 soms een lege naam op.
-    slug=url.rstrip('/').split('/')[-1]
-    name=slug.replace('-',' ').title()
-    # Probeer daarna de naam achter de | uit de paginatitel te gebruiken;
-    # die is meestal netter en bevat geen rugnummer.
-    mt=re.search(r'<title[^>]*>.*?\|\s*([^<]+)',page,re.I|re.S)
-    if mt:
-        candidate=clean(htmlmod.unescape(mt.group(1)))
-        if candidate and "Eredivisie" not in candidate:
-            name=candidate
-    name=re.sub(r'^\s*#?\s*\d{1,3}\s*(?:[-–—:]\s*)?', '', name).strip()
-    def val(label):
-        m=re.search(re.escape(label)+r'\s*[|:]?\s*(\d+)',text,re.I)
-        return int(m.group(1)) if m else 0
-    games=val('Wedstrijden Gespeeld')
-    goals=val('Doelpunten')
-    assists=val('Assists')
-    mh=re.search(r'<h1[^>]*>.*?\b(\d{1,3})\s+[^<]+</h1>',page,re.I|re.S)
-    if mh: number=mh.group(1)
-    mp=re.search(r'Positie\s*(Keeper|Verdediger|Middenvelder|Aanvaller)',text,re.I)
-    if mp: position=mp.group(1).capitalize()
-    return {"name":name,"number":str(number or ""),"position":position or "Onbekend","games":games,"goals":goals,"assists":assists,"url":url}
+class _SimpleTableParser(HTMLParser):
+    def __init__(self):
+        super().__init__(); self.tables=[]; self.table=None; self.row=None; self.cell=None
+    def handle_starttag(self,tag,attrs):
+        tag=tag.lower()
+        if tag=="table": self.table=[]
+        elif self.table is not None and tag=="tr": self.row=[]
+        elif self.row is not None and tag in ("th","td"): self.cell=[]
+    def handle_data(self,data):
+        if self.cell is not None: self.cell.append(data)
+    def handle_endtag(self,tag):
+        tag=tag.lower()
+        if tag in ("th","td") and self.cell is not None:
+            self.row.append(clean(" ".join(self.cell))); self.cell=None
+        elif tag=="tr" and self.row is not None:
+            if self.row: self.table.append(self.row)
+            self.row=None
+        elif tag=="table" and self.table is not None:
+            self.tables.append(self.table); self.table=None
+
+def _norm_name(name):
+    return re.sub(r'[^a-z0-9]+','',htmlmod.unescape(name).lower())
 
 def fetch_squad():
-    page=fetch_html(EREDIVISIE_AJAX,20)
-    links=[]; seen=set()
-    for m in re.finditer(r'''href=["']([^"']*/clubs/ajax/spelers/[^"']+/)["']''',page,re.I):
-        url=urljoin(EREDIVISIE_AJAX,htmlmod.unescape(m.group(1)))
-        if url in seen: continue
-        seen.add(url)
-        around=clean(page[max(0,m.start()-800):min(len(page),m.end()+400)])
-        nums=re.findall(r'#\s*(\d{1,3})',around)
-        number=nums[-1] if nums else ""
-        pos=""
-        for label in ("Keeper","Verdediger","Middenvelder","Aanvaller"):
-            if re.search(r'\b'+label+r'\b',around,re.I): pos=label
-        links.append((url,number,pos))
-    if not links: return []
+    page=fetch_html(AFC_AJAX_SQUAD,20)
+    parser=_SimpleTableParser(); parser.feed(page)
+    stats={}
+    for table in parser.tables:
+        if not table: continue
+        headers=[clean(x).lower() for x in table[0]]
+        # De AFC-tabel heeft expliciete kolommen; alleen deze tabel gebruiken.
+        if not ("speler" in headers and "wedstrijden" in headers and "doelpunten" in headers and "minuten" in headers):
+            continue
+        idx={h:i for i,h in enumerate(headers)}
+        def get(row,key):
+            i=idx.get(key,-1); return row[i] if 0 <= i < len(row) else ""
+        for row in table[1:]:
+            name=get(row,"speler")
+            if not name: continue
+            def num(key):
+                v=get(row,key).strip()
+                m=re.search(r'-?\d+',v)
+                return int(m.group()) if m else 0
+            stats[_norm_name(name)]={
+                "games":num("wedstrijden"),"goals":num("doelpunten"),"yellow":num("geel"),
+                "red":num("rood"),"assists":num("assists"),"minutes":num("minuten")
+            }
+        break
+    if not stats:
+        return []
     players=[]
-    with ThreadPoolExecutor(max_workers=8) as ex:
-        futs={ex.submit(_player_stats,*x):x for x in links}
-        for f in as_completed(futs):
-            try: players.append(f.result())
-            except Exception: pass
-    order={"Keeper":0,"Verdediger":1,"Middenvelder":2,"Aanvaller":3,"Onbekend":4}
-    players.sort(key=lambda x:(order.get(x["position"],9), int(x["number"]) if str(x["number"]).isdigit() else 999, x["name"]))
+    for number,name,position in AJAX_ROSTER_2627:
+        st=stats.get(_norm_name(name),{})
+        players.append({"name":name,"number":number,"position":position,
+            "games":st.get("games",0),"goals":st.get("goals",0),"assists":st.get("assists",0),
+            "yellow":st.get("yellow",0),"red":st.get("red",0),"minutes":st.get("minutes",0)})
+    order={"Keeper":0,"Verdediger":1,"Middenvelder":2,"Aanvaller":3}
+    players.sort(key=lambda x:(order.get(x["position"],9),int(x["number"])))
     return players
 
 TRANSFERMARKT_IN="https://www.transfermarkt.nl/ajax-amsterdam/geruechte/verein/610"

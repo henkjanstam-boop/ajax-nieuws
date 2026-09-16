@@ -37,3 +37,9 @@ python ajax_nieuws.py
 
 
 V6.12: nieuwe SELECTIE-pagina met actuele Ajax 1-selectie, rugnummers en Eredivisie-statistieken (wedstrijden, goals, assists), automatisch opgehaald van Eredivisie.nl.
+
+V6.13
+- Selectiestatistieken komen live van AFC-Ajax.info.
+- Alle officiële wedstrijden 2026/27 worden meegeteld.
+- Toegevoegd: gele kaarten, rode kaarten en speelminuten.
+- Rugnummers en posities zijn gekoppeld aan de actuele Ajax 1-selectie.

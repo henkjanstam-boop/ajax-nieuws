@@ -265,6 +265,9 @@ def _player_stats(url, number="", position=""):
     if not name or "Eredivisie" in name:
         mh=re.search(r'<h1[^>]*>\s*(?:<[^>]+>\s*)*(?:#?\s*\d+\s*)?([^<]+)',page,re.I)
         name=clean(mh.group(1)) if mh else url.rstrip('/').split('/')[-1].replace('-',' ').title()
+    # De Eredivisie-paginatitel kan het rugnummer voor de spelersnaam zetten
+    # (bijv. "#3 Youri Baas"). Het nummer heeft al een eigen kolom.
+    name=re.sub(r'^\s*#?\s*\d{1,3}\s*(?:[-–—:]\s*)?', '', name).strip()
     def val(label):
         m=re.search(re.escape(label)+r'\s*[|:]?\s*(\d+)',text,re.I)
         return int(m.group(1)) if m else 0

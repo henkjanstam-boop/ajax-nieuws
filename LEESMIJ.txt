@@ -1,3 +1,8 @@
+AJAX NIEUWS V6.11
+
+- Stand: G/V wordt nu berekend uit GS, W en punten; hierdoor kan de bronvolgorde ze niet meer omwisselen.
+- Laatste officiële transfers na Amrabat toegevoegd en voorzien van datum.
+
 AJAX NIEUWS DASHBOARD v6.10
 
 Nieuw in v6.10:
@@ -29,3 +34,6 @@ Lokaal:
 
 Render start command:
 python ajax_nieuws.py
+
+
+V6.12: nieuwe SELECTIE-pagina met actuele Ajax 1-selectie, rugnummers en Eredivisie-statistieken (wedstrijden, goals, assists), automatisch opgehaald van Eredivisie.nl.

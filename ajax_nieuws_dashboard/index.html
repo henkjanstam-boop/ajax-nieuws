@@ -134,8 +134,19 @@
 
   .squad-summary{grid-template-columns:repeat(2,1fr)}
   .squad-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .squad-head,.squad-row{min-width:930px}
+  /* V6.13.1: selectie compacter op mobiel. De spelersnaam hoeft hier
+     niet de brede desktopkolom te houden; overige stats blijven zichtbaar. */
+  .squad-head,.squad-row{
+    min-width:690px;
+    grid-template-columns:42px 130px 92px 54px 52px 58px 42px 42px 78px;
+    padding:0 10px
+  }
+  .squad-row .player{font-size:13px;line-height:1.15;white-space:normal}
+  .squad-row .pos{font-size:11px}
+  .squad-head{font-size:9px;letter-spacing:.4px}
+  .squad-row .stat{font-size:12px}
 }
+
 @media(max-width:430px){
   .nav .item{padding:7px 8px;font-size:10px}
   .top{top:94px}

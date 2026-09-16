@@ -3,6 +3,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, urljoin
 from urllib.request import Request, urlopen
 import json, re, html as htmlmod, os
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from html.parser import HTMLParser
 from datetime import date
 
@@ -192,6 +193,15 @@ def fetch_stand():
     rows=[]
     for m in pat.finditer(text):
         pos,club,gs,w,g,v,goals,ds,pts=[x.strip() for x in m.groups()]
+        # Derive draws/losses from points and games. This stays correct even if
+        # Eredivisie.nl changes the DOM order of G and V.
+        try:
+            g_calc = int(pts) - (3 * int(w))
+            v_calc = int(gs) - int(w) - g_calc
+            if 0 <= g_calc <= int(gs) and 0 <= v_calc <= int(gs):
+                g, v = str(g_calc), str(v_calc)
+        except Exception:
+            pass
         rows.append({"pos":pos,"club":club,"gs":gs,"w":w,"g":g,"v":v,
                      "goals":goals.replace(" ",""),"ds":ds,"pts":pts})
 
@@ -203,6 +213,13 @@ def fetch_stand():
         rows=[]
         for m in pat.finditer(compact):
             pos,club,gs,w,g,v,goals,ds,pts=[x.strip() for x in m.groups()]
+            try:
+                g_calc = int(pts) - (3 * int(w))
+                v_calc = int(gs) - int(w) - g_calc
+                if 0 <= g_calc <= int(gs) and 0 <= v_calc <= int(gs):
+                    g, v = str(g_calc), str(v_calc)
+            except Exception:
+                pass
             rows.append({"pos":pos,"club":club,"gs":gs,"w":w,"g":g,"v":v,
                          "goals":goals.replace(" ",""),"ds":ds,"pts":pts})
 
@@ -232,6 +249,58 @@ def fetch_stand():
           {"pos":"18","club":"ADO Den Haag","gs":"6","w":"0","g":"1","v":"5","goals":"6-16","ds":"-10","pts":"1"}
         ]
     return rows
+EREDIVISIE_AJAX="https://eredivisie.nl/competitie/clubs/ajax/"
+
+def _text_page(page):
+    s=htmlmod.unescape(page)
+    s=re.sub(r'<(?:br|/p|/div|/li|/span|/h1|/h2|/h3|/td|/th|/tr)\b[^>]*>', '\n', s, flags=re.I)
+    s=re.sub(r'<[^>]+>', ' ', s)
+    return re.sub(r'[ \t]+',' ',s)
+
+def _player_stats(url, number="", position=""):
+    page=fetch_html(url,15)
+    text=_text_page(page)
+    mt=re.search(r'<title[^>]*>\s*([^<|]+)',page,re.I)
+    name=htmlmod.unescape(mt.group(1)).strip() if mt else ""
+    if not name or "Eredivisie" in name:
+        mh=re.search(r'<h1[^>]*>\s*(?:<[^>]+>\s*)*(?:#?\s*\d+\s*)?([^<]+)',page,re.I)
+        name=clean(mh.group(1)) if mh else url.rstrip('/').split('/')[-1].replace('-',' ').title()
+    def val(label):
+        m=re.search(re.escape(label)+r'\s*[|:]?\s*(\d+)',text,re.I)
+        return int(m.group(1)) if m else 0
+    games=val('Wedstrijden Gespeeld')
+    goals=val('Doelpunten')
+    assists=val('Assists')
+    mh=re.search(r'<h1[^>]*>.*?\b(\d{1,3})\s+[^<]+</h1>',page,re.I|re.S)
+    if mh: number=mh.group(1)
+    mp=re.search(r'Positie\s*(Keeper|Verdediger|Middenvelder|Aanvaller)',text,re.I)
+    if mp: position=mp.group(1).capitalize()
+    return {"name":name,"number":str(number or ""),"position":position or "Onbekend","games":games,"goals":goals,"assists":assists,"url":url}
+
+def fetch_squad():
+    page=fetch_html(EREDIVISIE_AJAX,20)
+    links=[]; seen=set()
+    for m in re.finditer(r'''href=["']([^"']*/clubs/ajax/spelers/[^"']+/)["']''',page,re.I):
+        url=urljoin(EREDIVISIE_AJAX,htmlmod.unescape(m.group(1)))
+        if url in seen: continue
+        seen.add(url)
+        around=clean(page[max(0,m.start()-800):min(len(page),m.end()+400)])
+        nums=re.findall(r'#\s*(\d{1,3})',around)
+        number=nums[-1] if nums else ""
+        pos=""
+        for label in ("Keeper","Verdediger","Middenvelder","Aanvaller"):
+            if re.search(r'\b'+label+r'\b',around,re.I): pos=label
+        links.append((url,number,pos))
+    if not links: return []
+    players=[]
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        futs={ex.submit(_player_stats,*x):x for x in links}
+        for f in as_completed(futs):
+            try: players.append(f.result())
+            except Exception: pass
+    order={"Keeper":0,"Verdediger":1,"Middenvelder":2,"Aanvaller":3,"Onbekend":4}
+    players.sort(key=lambda x:(order.get(x["position"],9), int(x["number"]) if str(x["number"]).isdigit() else 999, x["name"]))
+    return players
 
 TRANSFERMARKT_IN="https://www.transfermarkt.nl/ajax-amsterdam/geruechte/verein/610"
 TRANSFERMARKT_OUT="https://www.transfermarkt.nl/ajax-amsterdam/geruechteabgaenge/verein/610"
@@ -530,6 +599,12 @@ class H(BaseHTTPRequestHandler):
                 if not rumours.get("incoming") and not rumours.get("outgoing"):
                     return self.send_json({"incoming":[],"outgoing":[],"error":"Geen Transfermarkt-geruchten gevonden."},502)
                 return self.send_json(rumours)
+            if p=="/api/squad":
+                players=fetch_squad()
+                if not players:
+                    return self.send_json({"players":[],"error":"De actuele Ajax-selectie kon niet worden uitgelezen."},502)
+                team_games=max((x.get("games",0) for x in players),default=0)
+                return self.send_json({"players":players,"team_games":team_games})
             if p=="/api/stand":
                 stand=fetch_stand()
                 if not stand:
@@ -548,6 +623,7 @@ class H(BaseHTTPRequestHandler):
         except Exception as e:
             if p=="/api/news": return self.send_json({"items":[],"error":str(e)},500)
             if p=="/api/rumours": return self.send_json({"incoming":[],"outgoing":[],"error":str(e)},500)
+            if p=="/api/squad": return self.send_json({"players":[],"error":str(e)},500)
             if p=="/api/stand": return self.send_json({"stand":[],"error":str(e)},500)
             if p=="/api/matches": return self.send_json({"matches":[],"error":str(e)},500)
             self.send_response(500); self.end_headers()

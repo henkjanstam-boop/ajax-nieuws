@@ -260,13 +260,18 @@ def _text_page(page):
 def _player_stats(url, number="", position=""):
     page=fetch_html(url,15)
     text=_text_page(page)
-    mt=re.search(r'<title[^>]*>\s*([^<|]+)',page,re.I)
-    name=htmlmod.unescape(mt.group(1)).strip() if mt else ""
-    if not name or "Eredivisie" in name:
-        mh=re.search(r'<h1[^>]*>\s*(?:<[^>]+>\s*)*(?:#?\s*\d+\s*)?([^<]+)',page,re.I)
-        name=clean(mh.group(1)) if mh else url.rstrip('/').split('/')[-1].replace('-',' ').title()
-    # De Eredivisie-paginatitel kan het rugnummer voor de spelersnaam zetten
-    # (bijv. "#3 Youri Baas"). Het nummer heeft al een eigen kolom.
+    # Gebruik de spelersslug als betrouwbare naambron. De paginatitel begint
+    # tegenwoordig met "VriendenLoterij Eredivisie | ..." en leverde daardoor
+    # in V6.12.1 soms een lege naam op.
+    slug=url.rstrip('/').split('/')[-1]
+    name=slug.replace('-',' ').title()
+    # Probeer daarna de naam achter de | uit de paginatitel te gebruiken;
+    # die is meestal netter en bevat geen rugnummer.
+    mt=re.search(r'<title[^>]*>.*?\|\s*([^<]+)',page,re.I|re.S)
+    if mt:
+        candidate=clean(htmlmod.unescape(mt.group(1)))
+        if candidate and "Eredivisie" not in candidate:
+            name=candidate
     name=re.sub(r'^\s*#?\s*\d{1,3}\s*(?:[-–—:]\s*)?', '', name).strip()
     def val(label):
         m=re.search(re.escape(label)+r'\s*[|:]?\s*(\d+)',text,re.I)
